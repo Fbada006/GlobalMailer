@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.droidafricana.globalmail.MainActivity">
+
+    <item
+        android:id="@+id/about_dest"
+        android:icon="@drawable/about_us"
+        android:menuCategory="secondary"
+        android:orderInCategory="110"
+        android:title="@string/category_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/settings_dest"
+        android:icon="@drawable/ic_settings"
+        android:menuCategory="secondary"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/fragment_search"
+        android:icon="@drawable/ic_search"
+        android:menuCategory="secondary"
+        android:orderInCategory="105"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom" />
+
+</menu>

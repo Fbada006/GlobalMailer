@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#76a834</color>
+    <color name="colorPrimaryDark">#467900</color>
+    <color name="colorAccent">#FF5722</color>
+
+    <!--Background of the item-->
+    <color name="item_background">#F3E5F5</color>
+
+    <!--Text color of the news title-->
+    <color name="color_news_title_and_clickable">#3700B3</color>
+
+    <!--My text Colour for the app-->
+    <color name="universal_text_color">#000000</color>
+
+    <!--My background for drawer, cardview, and about-->
+    <color name="my_background">#F2F2F2</color>
+</resources>

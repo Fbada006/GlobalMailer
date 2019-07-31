@@ -1,0 +1,73 @@
+<resources>
+    <!--Margin for the connection error animation-->
+    <dimen name="no_internet_view_margin">24dp</dimen>
+
+    <!--The padding of the layout in the news_item.xml-->
+    <dimen name="item_layout_margin">8dp</dimen>
+
+    <!--The padding of the layout in the first_news_item.xml-->
+    <dimen name="first_item_layout_margin">12dp</dimen>
+
+    <!-- Height of each article item in the feature list -->
+    <dimen name="list_item_height">180dp</dimen>
+
+    <!--Elevation of the cardView-->
+    <dimen name="item_card_elevation">8dp</dimen>
+
+    <!--Elevation of the first Item-->
+    <dimen name="first_item_card_elevation">8dp</dimen>
+
+    <!--Radius of the first Item-->
+    <dimen name="first_item_card_radius">18dp</dimen>
+
+    <!--News title text size-->
+    <dimen name="item_news_title_text_size">20sp</dimen>
+
+    <!--News description text size-->
+    <dimen name="item_news_description_text_size">18sp</dimen>
+
+    <!--Margin for the like button-->
+    <dimen name="item_image_margin">8dp</dimen>
+
+    <!--Text size of the first item layout-->
+    <dimen name="first_item_news_title_text_size">28sp</dimen>
+
+    <!--Text size of the first item layout description-->
+    <dimen name="first_item_news_description_text_size">18sp</dimen>
+
+    <!--Height of the first item imageView-->
+    <dimen name="first_item_image_height">300dp</dimen>
+
+    <!--Navigation drawer elevation-->
+    <dimen name="nav_drawer_elevation">16dp</dimen>
+
+    <!-- Navigation Drawer maximum width -->
+    <dimen name="navigation_drawer_max_width">320dp</dimen>
+
+    <!--Padding for the news description-->
+    <dimen name="item_news_description_padding">4dp</dimen>
+
+    <!--No article found layout search tips text size-->
+    <dimen name="error_licenses_layout_textSize">24sp</dimen>
+
+    <!--Image in no layout found article-->
+    <dimen name="no_article_sad_face">300dp</dimen>
+
+    <!--The size of the uh oh text in the no layout found article-->
+    <dimen name="error_layout_main_textSize">28sp</dimen>
+
+    <!--Padding for the text in the error layout-->
+    <dimen name="error_layout_padding">24dp</dimen>
+
+    <!--TextSize for the date the loading text-->
+    <dimen name="loading_text_size">28sp</dimen>
+
+    <!--Top padding for loading text-->
+    <dimen name="loading_text_top_padding">24dp</dimen>
+
+    <!--Height of navigation header-->
+    <dimen name="nav_header_height">350dp</dimen>
+
+    <!--The padding for the lottie animation View-->
+    <dimen name="padding_loading_bar">30dp</dimen>
+</resources>

@@ -1,0 +1,208 @@
+<resources>
+    <string name="app_name" translatable="false">Global Mailer</string>
+
+    <!--Categories titles for the navigation drawer-->
+    <string name="category_top_news">Breaking News</string>
+    <string name="category_sports">Sports</string>
+    <string name="category_entertainment">Entertainment</string>
+    <string name="category_business">Business</string>
+    <string name="category_health">Health</string>
+    <string name="category_science">Science</string>
+    <string name="category_technology">Technology</string>
+    <string name="category_about">About</string>
+    <string name="category_favorites">Favourites</string>
+
+    <!-- Strings for Notifications -->
+    <string name="pref_new_article_notifications_title">New article notifications</string>
+    <string name="pref_vibrate_title">Vibrate</string>
+    <string name="pref_vibrate_key" translatable="false">notifications_new_message_vibrate_notification</string>
+    <string name="pref_notifications_key" translatable="false">pref_notifications_new_article_notification</string>
+
+    <!--Strings for notification categories-->
+    <string name="preference_notification_category">Notifications</string>
+    <string name="preference_general_category">General</string>
+
+    <!--Notification timer interval strings-->
+    <string name="pref_notification_interval_title">Notification interval</string>
+    <string name="pref_notification_interval_key" translatable="false">notification_interval_key</string>
+    <string name="pref_default_notification_interval" translatable="false">12</string>
+    <string name="pref_notification_interval_hint">Time between notifications</string>
+
+    <!--Checkbox summary-->
+    <string name="pref_summary_on">Enabled</string>
+    <string name="pref_summary_off">Disabled</string>
+
+    <!--Custom tabs strings-->
+    <string name="customs_tabs_copy_link_to_clipboard">Copy link</string>
+
+    <!--Menu item string for launching settings and about us screens-->
+    <string name="action_settings">Settings</string>
+
+    <!--Menu item string for search item-->
+    <string name="action_search">Search Articles</string>
+    <string name="type_something_to_search_above">Type something to search above</string>
+
+    <!--Country news preferences-->
+    <string name="pref_country_news_to_display_title">Country</string>
+    <string name="pref_country_news_to_display_key" translatable="false">country_list_key</string>
+    <string name="pref_country_news_to_display_default" translatable="false">us</string>
+
+    <!--Sort by preferences-->
+    <string name="pref_sort_by_title">Sort by</string>
+    <string name="pref_sort_by_key" translatable="false">sort_by_key</string>
+    <string name="pref_sort_by_default" translatable="false">@string/pref_sort_by_publishedAt_value</string>
+
+    <!--Sort by strings title-->
+    <string name="pref_sort_by_relevance_title" translatable="false">Relevance</string>
+    <string name="pref_sort_by_popularity_title" translatable="false">Popularity</string>
+    <string name="pref_sort_by_publishedAt_title" translatable="false">Date of Publication</string>
+
+    <!--Sort by values-->
+    <string name="pref_sort_by_relevance_value" translatable="false">relevancy</string>
+    <string name="pref_sort_by_popularity_value" translatable="false">popularity</string>
+    <string name="pref_sort_by_publishedAt_value" translatable="false">publishedAt</string>
+
+    <!--Search query strings-->
+    <string name="pref_query_title">Search news</string>
+    <string name="pref_query_key" translatable="false">query_key</string>
+    <string name="pref_query_hint">Search a topic</string>
+
+    <!--Endpoint strings-->
+    <string name="pref_endpoint_title">News to display</string>
+    <string name="pref_endpoint_key" translatable="false">items_to_show_key</string>
+    <string name="pref_endpoint_default" translatable="false">@string/pref_endpoint_top_news_value</string>
+
+    <!--Endpoint titles-->
+    <string name="pref_endpoint_top_news_title">Top Headlines</string>
+    <string name="pref_endpoint_everything_title">Everything</string>
+
+    <!--Endpoint values-->
+    <string name="pref_endpoint_top_news_value" translatable="false">top-headlines</string>
+    <string name="pref_endpoint_everything_value" translatable="false">everything</string>
+
+    <!--Category values-->
+    <string name="category_general_value" translatable="false">general</string>
+    <string name="category_sports_value" translatable="false">sports</string>
+    <string name="category_entertainment_value" translatable="false">entertainment</string>
+    <string name="category_technology_value" translatable="false">technology</string>
+    <string name="category_business_value" translatable="false">business</string>
+    <string name="category_health_value" translatable="false">health</string>
+    <string name="category_science_value" translatable="false">science</string>
+
+    <!--Countries-->
+    <string name="country_argentina">Argentina</string>
+    <string name="country_australia">Australia</string>
+    <string name="country_austria">Austria</string>
+    <string name="country_belgium">Belgium</string>
+    <string name="country_brazil">Brazil</string>
+    <string name="country_bulgaria">Bulgaria</string>
+    <string name="country_canada">Canada</string>
+    <string name="country_china">China</string>
+    <string name="country_colombia">Colombia</string>
+    <string name="country_cuba">Cuba</string>
+    <string name="country_czech_republic">Czech Republic</string>
+    <string name="country_egypt">Egypt</string>
+    <string name="country_france">France</string>
+    <string name="country_germany">Germany</string>
+    <string name="country_greece">Greece</string>
+    <string name="country_hong_kong">Hong Kong</string>
+    <string name="country_hungary">Hungary</string>
+    <string name="country_india">India</string>
+    <string name="country_indonesia">Indonesia</string>
+    <string name="country_ireland">Ireland</string>
+    <string name="country_israel">Israel</string>
+    <string name="country_italy">Italy</string>
+    <string name="country_japan">Japan</string>
+    <string name="country_latvia">Latvia</string>
+    <string name="country_lithuania">Lithuania</string>
+    <string name="country_malaysia">Malaysia</string>
+    <string name="country_mexico">Mexico</string>
+    <string name="country_morocco">Morocco</string>
+    <string name="country_netherlands">Netherlands</string>
+    <string name="country_new_zealand">New Zealand</string>
+    <string name="country_nigeria">Nigeria</string>
+    <string name="country_norway">Norway</string>
+    <string name="country_philippines">Philippines</string>
+    <string name="country_poland">Poland</string>
+    <string name="country_portugal">Portugal</string>
+    <string name="country_romania">Romania</string>
+    <string name="country_russia">Russia</string>
+    <string name="country_saudi_arabia">Saudi Arabia</string>
+    <string name="country_serbia">Serbia</string>
+    <string name="country_singapore">Singapore</string>
+    <string name="country_slovakia">Slovakia</string>
+    <string name="country_slovenia">Slovenia</string>
+    <string name="country_south_africa">South Africa</string>
+    <string name="country_south_korea">South Korea</string>
+    <string name="country_sweden">Sweden</string>
+    <string name="country_switzerland">Switzerland</string>
+    <string name="country_taiwan">Taiwan</string>
+    <string name="country_thailand">Thailand</string>
+    <string name="country_turkey">Turkey</string>
+    <string name="country_uae">UAE</string>
+    <string name="country_ukraine">Ukraine</string>
+    <string name="country_uk">United Kingdom</string>
+    <string name="country_us">United States</string>
+    <string name="country_venezuela">Venezuela</string>
+
+    <!--Notification Strings-->
+    <string name="main_notification_channel_name" translatable="false">Primary</string>
+
+    <!--Error message for toast in SettingsFragment-->
+    <string name="prefs_please_enter_number_between_1_and_24">Please enter a number between 1 and 24</string>
+
+    <!--Close a list preference-->
+    <string name="pref_close_list">Close</string>
+
+    <!--No generalArticles found layout-->
+    <string name="uh_oh">Uh oh…</string>
+    <string name="no_articles_found">It seems like we did not find any articles. We are really sorry about that. You can try the following to make this go away:</string>
+    <string name="check_errors_in_search">-Make sure that you have no errors in your search.</string>
+    <string name="try_different_search">-Try a different search topic..</string>
+    <string name="check_internet_connection">-Make sure that you have a working internet connection.</string>
+    <string name="refresh_page">-Swipe down the screen to refresh the page.</string>
+
+    <!--Error toast for API call-->
+    <string name="failed_please_retry">Failed.Please retry.</string>
+    <string name="action_ignore_article_reminder_title">No, Thank you.</string>
+
+    <!--Strings in the about me layout-->
+    <string name="powered_by_newsapi_org" translatable="false">Powered by NewsAPI.org</string>
+    <string name="this_application_uses_the_following_third_party_libraries">This application uses the following third party libraries:</string>
+    <string name="retrofit_2" translatable="false"><![CDATA[->Retrofit 2]]></string>
+    <string name="okhttp3" translatable="false"><![CDATA[->Okhttp3]]></string>
+    <string name="picasso" translatable="false"><![CDATA[->Picasso]]></string>
+    <string name="firebase" translatable="false"><![CDATA[->Firebase]]></string>
+    <string name="chrome_custom_tabs" translatable="false"><![CDATA[->Chrome Custom Tabs]]></string>
+    <string name="androidx" translatable="false"><![CDATA[->AndroidX]]></string>
+    <string name="lottie" translatable="false"><![CDATA[->Lottie]]></string>
+    <string name="like_button" translatable="false"><![CDATA[->Like Button]]></string>
+    <string name="animation_credits">Animation credits</string>
+    <string name="chris_gannon_lottiefiles" translatable="false"><![CDATA[->Chris Gannon/LottieFiles]]></string>
+    <string name="rogger_t_n_lottiefiles" translatable="false"><![CDATA[->Rogger Tân/LottieFiles]]></string>
+    <string name="Hoài_Lê_lottiefiles" translatable="false"><![CDATA[->Hoài Lê/LottieFiles]]></string>
+    <string name="henrique_rossatto_lottiefiles" translatable="false"><![CDATA[->Henrique Rossatto/LottieFiles]]></string>
+    <string name="icon_credits">Icon credits</string>
+    <string name="freepik_from_www_flaticon_com" translatable="false"><![CDATA[->Freepik from www.flaticon.com]]></string>
+    <string name="roundicons_from_www_flaticon_com" translatable="false"><![CDATA[->Roundicons from www.flaticon.com]]></string>
+    <string name="pixel_buddha_from_www_flaticon_com" translatable="false"><![CDATA[->Pixel Buddha from www.flaticon.com]]></string>
+    <string name="mynamepong_from_www_flaticon_com" translatable="false"><![CDATA[->mynamepong from www.flaticon.com]]></string>
+    <string name="icon_pond_from_www_flaticon_com" translatable="false"><![CDATA[->Icon Pond from www.flaticon.com]]></string>
+    <string name="eucalyp_from_www_flaticon_com" translatable="false"><![CDATA[->Eucalyp from www.flaticon.com]]></string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="third_party_tools">Third party tools</string>
+
+    <!--Loading text-->
+    <string name="loading">Getting data…\nLoading taking too long? Check your data connection and retry</string>
+
+    <!--Content descriptions-->
+    <string name="content_desc_an_image_of_a_newspaper">An image of a newspaper</string>
+    <string name="accompanying_image_of_the_article">Accompanying image of the article</string>
+
+    <!-- Toast to play after Clear button has been pressed -->
+    <string name="cleared_message">Favorites cleared!</string>
+
+    <!--Text for the empty favorites table-->
+    <string name="nothing_to_see_here_at_the_moment">Nothing to see here at the moment</string>
+
+</resources>

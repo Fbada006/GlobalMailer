@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_top_news">Aktuelle Nachrichten</string>
+    <string name="category_sports">Sports</string>
+    <string name="category_entertainment">Unterhaltung</string>
+    <string name="category_business">Geschäft</string>
+    <string name="category_health">Gesundheit</string>
+    <string name="category_science">Wissenschaft</string>
+    <string name="category_technology">Technologie</string>
+    <string name="pref_vibrate_title">Vibrieren</string>
+
+
+    <string name="pref_new_article_notifications_title">Neue Artikelbenachrichtigungen</string>
+    <string name="pref_notification_interval_title">Benachrichtigungsintervall</string>
+    <string name="pref_notification_interval_hint">Zeit zwischen Benachrichtigungen</string>
+
+
+    <string name="pref_summary_on">Aktiviert</string>
+    <string name="pref_summary_off">Deaktiviert</string>
+
+
+    <string name="customs_tabs_copy_link_to_clipboard">Link kopieren</string>
+
+
+    <string name="action_settings">Die Einstellungen</string>
+
+
+    <string name="pref_country_news_to_display_title">Land</string>
+
+
+    <string name="pref_sort_by_title">Sortiere nach</string>
+
+
+    <string name="pref_query_title">Nachrichten suchen</string>
+    <string name="pref_query_hint">Suchen Sie ein Thema</string>
+
+
+    <string name="pref_endpoint_title">Nachrichten zum Anzeigen</string>
+    <string name="pref_endpoint_top_news_title">Top Schlagzeilen</string>
+    <string name="pref_endpoint_everything_title">Alles</string>
+
+
+    <string name="country_argentina">Argentinien</string>
+    <string name="country_australia">Australien</string>
+    <string name="country_austria">Österreich</string>
+    <string name="country_belgium">Belgien</string>
+    <string name="country_brazil">Brasilien</string>
+    <string name="country_bulgaria">Bulgarien</string>
+    <string name="country_canada">Kanada</string>
+    <string name="country_china">China</string>
+    <string name="country_colombia">Columbia</string>
+    <string name="country_cuba">Kuba</string>
+    <string name="country_czech_republic">Tschechische Republik</string>
+    <string name="country_egypt">Ägypten</string>
+    <string name="country_france">Frankreich</string>
+    <string name="country_germany">Deutschland</string>
+    <string name="country_greece">Griechenland</string>
+    <string name="country_hong_kong">Hongkong</string>
+    <string name="country_hungary">Ungarn</string>
+    <string name="country_india">Indien</string>
+    <string name="country_indonesia">Indonesien</string>
+    <string name="country_ireland">Irland</string>
+    <string name="country_israel">Israel</string>
+    <string name="country_italy">Italien</string>
+    <string name="country_japan">Japan</string>
+    <string name="country_latvia">Lettland</string>
+    <string name="country_lithuania">Litauen</string>
+    <string name="country_malaysia">Malaysia</string>
+    <string name="country_mexico">Mexiko</string>
+    <string name="country_morocco">Marokko</string>
+    <string name="country_netherlands">Niederlande</string>
+    <string name="country_new_zealand">Neuseeland</string>
+    <string name="country_nigeria">Nigeria</string>
+    <string name="country_norway">Norwegen</string>
+    <string name="country_philippines">Philippinen</string>
+    <string name="country_poland">Polen</string>
+    <string name="country_portugal">Portugal</string>
+    <string name="country_romania">Rumänien</string>
+    <string name="country_russia">Russland</string>
+    <string name="country_saudi_arabia">Saudi Arabien</string>
+    <string name="country_serbia">Serbien</string>
+    <string name="country_singapore">Singapur</string>
+    <string name="country_slovakia">Slowakei</string>
+    <string name="country_slovenia">Slowenien</string>
+    <string name="country_south_africa">Südafrika</string>
+    <string name="country_south_korea">Südkorea</string>
+    <string name="country_sweden">Schweden</string>
+    <string name="country_switzerland">Schweiz</string>
+    <string name="country_taiwan">Taiwan</string>
+    <string name="country_thailand">Thailand</string>
+    <string name="country_turkey">Truthahn</string>
+    <string name="country_uae">UAE</string>
+    <string name="country_ukraine">Ukraine</string>
+    <string name="country_uk">Großbritannien</string>
+    <string name="country_venezuela">Venezuela</string>
+
+    <string name="action_ignore_article_reminder_title">Nein danke.</string>
+    <string name="prefs_please_enter_number_between_1_and_24">Bitte geben Sie eine Zahl zwischen 1 und 24 ein</string>
+    <string name="pref_close_list">schließen</string>
+
+    <string name="uh_oh">Äh oh …</string>
+    <string name="no_articles_found">Es scheint, als hätten wir keine Artikel gefunden. Das tut uns sehr leid. Sie können Folgendes versuchen, um dies zu verhindern:</string>
+
+    <string name="failed_please_retry">Fehlgeschlagen. Bitte erneut versuchen.</string>
+    <string name="country_us">Vereinigte Staaten</string>
+    <string name="refresh_page">-Wischen Sie den Bildschirm nach unten, um die Seite zu aktualisieren.</string>
+    <string name="check_internet_connection">- Stellen Sie sicher, dass Sie über eine funktionierende Internetverbindung verfügen.</string>
+    <string name="try_different_search">- Versuchen Sie ein anderes Suchthema.</string>
+    <string name="check_errors_in_search">- Stellen Sie sicher, dass Sie keine Fehler in Ihrer Suche haben.</string>
+    <string name="this_application_uses_the_following_third_party_libraries">Diese Anwendung verwendet die folgenden Bibliotheken von Drittanbietern:</string>
+    <string name="third_party_tools">Tools von Drittanbietern</string>
+    <string name="privacy_policy">Datenschutz-Bestimmungen</string>
+    <string name="icon_credits">Icon Credits</string>
+    <string name="category_about">Über</string>
+    <string name="animation_credits">Animationscredits</string>
+    <string name="loading">Wird geladen…</string>
+    <string name="accompanying_image_of_the_article">Begleitbild des Artikels</string>
+    <string name="content_desc_an_image_of_a_newspaper">Ein Bild einer Zeitung</string>
+    <string name="action_search">Artikel suchen</string>
+    <string name="type_something_to_search_above">Geben Sie etwas ein, um oben zu suchen.</string>
+    <string name="category_favorites">Favoriten</string>
+    <string name="cleared_message">Favoriten gelöscht!</string>
+    <string name="nothing_to_see_here_at_the_moment">Im Moment gibt es hier nichts zu sehen</string>
+    <string name="preference_general_category">Allgemeines</string>
+    <string name="preference_notification_category">Benachrichtigungen</string>
+</resources>

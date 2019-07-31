@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.droidafricana.globalmail.domain.Article" />
+
+        <variable
+            name="articleClickListener"
+            type="com.droidafricana.globalmail.view.adapter.ArticleClickListenerInterface" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_news_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/first_item_layout_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> articleClickListener.onArticleClick(article)}"
+        app:cardCornerRadius="@dimen/first_item_card_radius"
+        app:cardElevation="@dimen/first_item_card_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/my_background"
+            android:padding="@dimen/item_news_description_padding">
+
+            <TextView
+                android:id="@+id/textView_news_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{article.articleTitle}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/color_news_title_and_clickable"
+                android:textSize="@dimen/first_item_news_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/image_frame"
+                app:layout_constraintEnd_toEndOf="@+id/image_frame"
+                app:layout_constraintStart_toStartOf="@+id/image_frame"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="This is the title of the article" />
+
+            <FrameLayout
+                android:id="@+id/image_frame"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/first_item_image_height"
+                app:layout_constraintBottom_toTopOf="@+id/textView_news_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView_news_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/first_item_layout_margin"
+                    android:layout_marginEnd="@dimen/first_item_layout_margin"
+                    android:background="@color/design_default_color_primary"
+                    android:contentDescription="@string/accompanying_image_of_the_article"
+                    app:imageArticle="@{article}"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginEnd="@dimen/first_item_layout_margin">
+
+                    <com.like.LikeButton
+                        android:id="@+id/star_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:icon_size="25dp"
+                        app:icon_type="heart"
+                        app:like_drawable="@drawable/ic_favorite"
+                        app:liked="@{article.liked}"
+                        app:unlike_drawable="@drawable/ic_favorites" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/textView_news_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="@integer/item_article_maxLines_count"
+                android:paddingTop="@dimen/item_news_description_padding"
+                android:paddingBottom="@dimen/item_news_description_padding"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/first_item_news_description_text_size"
+                app:descriptionArticle="@{article}"
+                app:layout_constraintEnd_toEndOf="@+id/textView_news_title"
+                app:layout_constraintStart_toStartOf="@+id/textView_news_title"
+                app:layout_constraintTop_toBottomOf="@+id/image_frame"
+                tools:text="This is the description of the article" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

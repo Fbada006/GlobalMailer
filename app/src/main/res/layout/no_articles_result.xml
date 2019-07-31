@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/about_gradient_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/error_layout_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/uh_oh"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/error_layout_main_textSize"
+            android:textStyle="italic" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="@dimen/no_article_sad_face"
+            android:layout_height="@dimen/no_article_sad_face"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="sad_face.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            style="@style/LicenceNErrorTextviewStyle"
+            android:text="@string/no_articles_found" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            style="@style/LicenceNErrorTextviewStyle"
+            android:text="@string/check_errors_in_search" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            style="@style/LicenceNErrorTextviewStyle"
+            android:text="@string/try_different_search" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+
+        <TextView
+            style="@style/LicenceNErrorTextviewStyle"
+            android:text="@string/check_internet_connection" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+
+
+        <TextView
+            style="@style/LicenceNErrorTextviewStyle"
+            android:text="@string/refresh_page" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary" />
+    </LinearLayout>
+</ScrollView>

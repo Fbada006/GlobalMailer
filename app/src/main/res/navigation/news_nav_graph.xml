@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/top_news_dest">
+
+    <fragment
+        android:id="@+id/sports_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.SportsNewsFragment"
+        android:label="@string/category_sports"
+        tools:layout="@layout/my_general_news_fragment">
+        <action
+            android:id="@+id/action_sports_news_dest_to_activity_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/top_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.TopNewsFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/my_general_news_fragment">
+        <action
+            android:id="@+id/action_top_news_dest_to_activity_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/entertainment_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.EntertainmentNewsFragment"
+        android:label="@string/category_entertainment"
+        tools:layout="@layout/my_general_news_fragment">
+
+        <action
+            android:id="@+id/action_entertainment_news_dest_to_activity_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/technology_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.TechnologyNewsFragment"
+        android:label="@string/category_technology"
+        tools:layout="@layout/my_general_news_fragment">
+        <action
+            android:id="@+id/action_technology_news_dest_to_activity_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/business_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.BusinessNewsFragment"
+        android:label="@string/category_business"
+        tools:layout="@layout/my_general_news_fragment">
+        <action
+            android:id="@+id/action_business_news_dest_to_activity_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/health_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.HealthNewsFragment"
+        android:label="@string/category_health"
+        tools:layout="@layout/my_general_news_fragment">
+        <action
+            android:id="@+id/action_health_news_dest_to_activity_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/science_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.ScienceNewsFragment"
+        android:label="@string/category_science"
+        tools:layout="@layout/my_general_news_fragment">
+        <action
+            android:id="@+id/action_science_news_dest_to_activity_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings_dest"
+        android:name="com.droidafricana.globalmail.view.ui.SettingsFragment"
+        android:label="@string/action_settings" />
+
+    <activity
+        android:id="@+id/about_dest"
+        android:name="com.droidafricana.globalmail.AboutActivity"
+        android:label="@string/category_about" />
+
+    <fragment
+        android:id="@+id/fragment_search_dest"
+        android:name="com.droidafricana.globalmail.view.ui.SearchFragment"
+        android:label="@string/action_search"
+        tools:layout="@layout/fragment_search">
+
+        <argument
+            android:name="categoryString"
+            app:argType="string"
+            app:launchSingleTop="false"
+            app:popUpTo="@+id/top_news_dest"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fav_news_dest"
+        android:name="com.droidafricana.globalmail.view.ui.FavsFragment"
+        android:label="@string/category_favorites"
+        tools:layout="@layout/my_fav_news_fragment">
+        <action
+            android:id="@+id/action_favsFragment_to_fragment_search_dest"
+            app:destination="@id/fragment_search_dest" />
+    </fragment>
+</navigation>
