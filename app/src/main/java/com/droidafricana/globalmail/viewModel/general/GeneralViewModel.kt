@@ -4,10 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.droidafricana.globalmail.database.ArticleDatabase
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.repository.ArticleRepository
@@ -28,12 +25,6 @@ class GeneralViewModel internal constructor(application: Application, articleCat
     val articleLoadingStatus: LiveData<GeneralArticleApiStatus>
         get() = _status
 
-    // Create a Coroutine scope using a job to be able to cancel when needed
-    private var viewModelJob = Job()
-
-    // the Coroutine runs using the Main (UI) dispatcher
-    private val articleCoroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
-
     //Database instance for use with the repository
     private val articleDatabase = ArticleDatabase.getDatabaseInstance(application)
 
@@ -52,7 +43,7 @@ class GeneralViewModel internal constructor(application: Application, articleCat
         val isConnected: Boolean = activeNetwork?.isConnected == true
 
         if (isConnected) {
-            articleCoroutineScope.launch {
+            viewModelScope.launch {
                 articleRepository.refreshGeneralArticleDatabaseFromNetwork()
             }
         }
@@ -62,23 +53,15 @@ class GeneralViewModel internal constructor(application: Application, articleCat
     val generalArticlesFromDb = articleRepository.generalArticles
 
     fun insertArticleIntoFavs(article: Article?) {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             articleRepository.insertArticleToFav(article!!)
         }
     }
 
     fun deleteArticleFromFavs(article: Article?) {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             articleRepository.deleteArticleInFav(article!!)
         }
-    }
-
-    /**
-     * Cancel all coroutines when the ViewModel is cleared
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }
 

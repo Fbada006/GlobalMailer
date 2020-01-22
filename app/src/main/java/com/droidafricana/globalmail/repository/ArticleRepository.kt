@@ -49,7 +49,7 @@ class ArticleRepository(private val context: Context,
                 val articleList = ArticleApi.retrofitService.getArticleListAsync(
                         PrefUtils.getEndpoint(context), null,
                         articleCategory, PrefUtils.getCountry(context),
-                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), API_KEY).await()
+                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), Constants.API_KEY).await()
 
                 //Write the new data to the empty table
                 articleDatabase.generalArticleDao.insertAllGeneralArticles(*articleList.asGeneralDatabaseModel())
@@ -73,7 +73,7 @@ class ArticleRepository(private val context: Context,
                 val articleList = ArticleApi.retrofitService.getArticleListAsync(
                         PrefUtils.getEndpoint(context), null,
                         articleCategory, PrefUtils.getCountry(context),
-                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), API_KEY).await()
+                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), Constants.API_KEY).await()
 
                 articleDatabase.sportsArticleDao.insertAllSportsArticles(*articleList.asSportsDatabaseModel())
             } catch (e: Exception) {
@@ -95,7 +95,7 @@ class ArticleRepository(private val context: Context,
                 val articleList = ArticleApi.retrofitService.getArticleListAsync(
                         PrefUtils.getEndpoint(context), null,
                         articleCategory, PrefUtils.getCountry(context),
-                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), API_KEY).await()
+                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), Constants.API_KEY).await()
 
                 articleDatabase.entArticleDao.insertAllEntArticles(*articleList.asEntDatabaseModel())
             } catch (e: Exception) {
@@ -117,7 +117,7 @@ class ArticleRepository(private val context: Context,
                 val articleList = ArticleApi.retrofitService.getArticleListAsync(
                         PrefUtils.getEndpoint(context), null,
                         articleCategory, PrefUtils.getCountry(context),
-                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), API_KEY).await()
+                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), Constants.API_KEY).await()
                 articleDatabase.technologyArticleDao.insertAllTechnologyArticles(*articleList.asTechDatabaseModel())
             } catch (e: Exception) {
             }
@@ -138,7 +138,7 @@ class ArticleRepository(private val context: Context,
                 val articleList = ArticleApi.retrofitService.getArticleListAsync(
                         PrefUtils.getEndpoint(context), null,
                         articleCategory, PrefUtils.getCountry(context),
-                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), API_KEY).await()
+                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), Constants.API_KEY).await()
                 articleDatabase.busArticleDao.insertAllBusinessArticles(*articleList.asBusinessDatabaseModel())
             } catch (e: Exception) {
             }
@@ -159,7 +159,7 @@ class ArticleRepository(private val context: Context,
                 val articleList = ArticleApi.retrofitService.getArticleListAsync(
                         PrefUtils.getEndpoint(context), null,
                         articleCategory, PrefUtils.getCountry(context),
-                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), API_KEY).await()
+                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), Constants.API_KEY).await()
                 articleDatabase.healthArticleDao.insertAllHealthArticles(*articleList.asHealthDatabaseModel())
             } catch (e: Exception) {
             }
@@ -181,7 +181,7 @@ class ArticleRepository(private val context: Context,
                 val articleList = ArticleApi.retrofitService.getArticleListAsync(
                         PrefUtils.getEndpoint(context), null,
                         articleCategory, PrefUtils.getCountry(context),
-                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), API_KEY).await()
+                        Constants.PAGE_SIZE, PrefUtils.getSortByParam(context), Constants.API_KEY).await()
                 articleDatabase.scienceArticleDao.insertAllScienceArticles(*articleList.asScienceDatabaseModel())
             } catch (e: Exception) {
             }

@@ -2,10 +2,7 @@ package com.droidafricana.globalmail.viewModel.favs
 
 import android.app.Application
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.droidafricana.globalmail.database.ArticleDatabase
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.repository.ArticleRepository
@@ -28,12 +25,6 @@ class FavsViewModel internal constructor(application: Application) :
         _showSnackBarEvent.value = false
     }
 
-    // Create a Coroutine scope using a job to be able to cancel when needed
-    private var viewModelJob = Job()
-
-    // the Coroutine runs using the Main (UI) dispatcher
-    private val articleCoroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
-
     //Database instance for use with the repository
     private val articleDatabase = ArticleDatabase.getDatabaseInstance(application)
 
@@ -45,34 +36,26 @@ class FavsViewModel internal constructor(application: Application) :
     val favArticlesFromDb = articleRepository.favouriteArticles
 
     fun insertArticleIntoFavs(article: Article?) {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             articleRepository.insertArticleToFav(article!!)
             Log.e(TAG, "Success writing! ")
         }
     }
 
     fun deleteArticleFromFavs(article: Article?) {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             articleRepository.deleteArticleInFav(article!!)
             Log.e(TAG, "Success deleting! ")
         }
     }
 
     fun clearAllFavs() {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             articleRepository.deleteAllArticlesInFav()
         }
 
         //Show a snackBar with the appropriate message
         _showSnackBarEvent.value = true
-    }
-
-    /**
-     * Cancel all coroutines when the ViewModel is cleared
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 
     class FavsViewModelFactory(private val mApplication: Application)

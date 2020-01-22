@@ -2,10 +2,7 @@ package com.droidafricana.globalmail.viewModel.search
 
 import android.app.Application
 import android.content.Context
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.droidafricana.globalmail.Constants
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.service.model.asDomainModel
@@ -13,9 +10,6 @@ import com.droidafricana.globalmail.service.network.ArticleApi
 import com.droidafricana.globalmail.utils.PrefUtils.getCountry
 import com.droidafricana.globalmail.utils.PrefUtils.getEndpoint
 import com.droidafricana.globalmail.utils.PrefUtils.getSortByParam
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 enum class ArticleApiStatus { LOADING, ERROR, DONE }
@@ -23,12 +17,6 @@ enum class ArticleApiStatus { LOADING, ERROR, DONE }
 class SearchViewModel internal constructor(application: Application,
                                            articleCategory: String?, queryParam: String?) :
         ViewModel() {
-
-    // Create a Coroutine scope using a job to be able to cancel when needed
-    private var viewModelJob = Job()
-
-    // the Coroutine runs using the Main (UI) dispatcher
-    private val articleCoroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
     private val _articlesObservable = MutableLiveData<List<Article>>()
 
@@ -47,11 +35,11 @@ class SearchViewModel internal constructor(application: Application,
     }
 
     fun getLiveArticles(context: Context?, articleCategory: String?, queryParam: String?) {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             val getArticlesDeferred = ArticleApi.retrofitService.getArticleListAsync(
                     getEndpoint(context), queryParam, articleCategory,
                     getCountry(context), Constants.PAGE_SIZE, getSortByParam(context),
-                    API_KEY
+                    Constants.API_KEY
             )
             try {
                 _status.value = ArticleApiStatus.LOADING
@@ -65,14 +53,6 @@ class SearchViewModel internal constructor(application: Application,
                 _status.value = ArticleApiStatus.ERROR
             }
         }
-    }
-
-    /**
-     * Cancel all coroutines when the ViewModel is cleared
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }
 

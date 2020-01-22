@@ -37,6 +37,10 @@ android {
     dataBinding {
         enabled = true
     }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'VANILLA', GlobalMail_ApiKey
+    }
 }
 
 dependencies {
@@ -99,6 +103,9 @@ dependencies {
     //ViewModel and LiveData (arch components)
     implementation "androidx.lifecycle:lifecycle-extensions:$version_lifecycle_extensions"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version_kotlin"
+
+    // ViewModel Kotlin support
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$version_lifecycle_extensions"
 
     //Lottie animations
     implementation "com.airbnb.android:lottie:$version_lottie"

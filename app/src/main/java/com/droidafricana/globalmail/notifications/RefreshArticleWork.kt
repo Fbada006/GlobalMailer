@@ -25,7 +25,7 @@ class RefreshArticleWork(appContext: Context, params: WorkerParameters) :
                     PrefUtils.getEndpoint(applicationContext), null,
                     PrefUtils.categoryGeneral(applicationContext), PrefUtils.getCountry(applicationContext),
                     Constants.PAGE_SIZE, PrefUtils.getSortByParam(applicationContext),
-                    API_KEY).await()
+                    Constants.API_KEY).await()
 
             val articleList: List<Article> = articleListDeferred.asDomainModel()
 

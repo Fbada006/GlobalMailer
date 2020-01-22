@@ -6,6 +6,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewModelScope
 import com.droidafricana.globalmail.database.ArticleDatabase
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.repository.ArticleRepository
@@ -16,13 +17,6 @@ import kotlinx.coroutines.launch
 
 class TechnologyViewModel internal constructor(application: Application, articleCategory: String?) :
         ViewModel() {
-
-    // Create a Coroutine scope using a job to be able to cancel when needed
-    private var viewModelJob = Job()
-
-    // the Coroutine runs using the Main (UI) dispatcher
-    private val articleCoroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
-
     //Database instance for use with the repository
     private val articleDatabase = ArticleDatabase.getDatabaseInstance(application)
 
@@ -41,7 +35,7 @@ class TechnologyViewModel internal constructor(application: Application, article
         val isConnected: Boolean = activeNetwork?.isConnected == true
 
         if (isConnected) {
-            articleCoroutineScope.launch {
+            viewModelScope.launch {
                 articleRepository.refreshTechArticleDatabaseFromNetwork()
             }
         }
@@ -50,23 +44,15 @@ class TechnologyViewModel internal constructor(application: Application, article
     val techArticlesFromDb = articleRepository.techArticles
 
     fun insertArticleIntoFavs(article: Article?) {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             articleRepository.insertArticleToFav(article!!)
         }
     }
 
     fun deleteArticleFromFavs(article: Article?) {
-        articleCoroutineScope.launch {
+        viewModelScope.launch {
             articleRepository.deleteArticleInFav(article!!)
         }
-    }
-
-    /**
-     * Cancel all coroutines when the ViewModel is cleared
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }
 
