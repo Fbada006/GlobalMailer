@@ -51,7 +51,7 @@ class SearchViewModel internal constructor(application: Application,
             val getArticlesDeferred = ArticleApi.retrofitService.getArticleListAsync(
                     getEndpoint(context), queryParam, articleCategory,
                     getCountry(context), Constants.PAGE_SIZE, getSortByParam(context),
-                    Constants.API_KEY
+                    API_KEY
             )
             try {
                 _status.value = ArticleApiStatus.LOADING

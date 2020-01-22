@@ -4,6 +4,7 @@ env:
   global:
     - ANDROID_TARGET=android-22
     - ANDROID_ABI=armeabi-v7a
+    - ADB_INSTALL_TIMEOUT=10
 android:
   components:
     - tools
@@ -21,9 +22,6 @@ android:
 # Run assemble and unit tests
 script:
   - chmod +x ./gradlew
-  - ./gradlew clean assembleDebug
-  - ./gradlew clean assembleRelease
-  - ./gradlew clean testDebug
   - ./gradlew build jacocoTestReport assembleAndroidTest
   - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
   - emulator -avd test -no-skin -no-audio -no-window &
