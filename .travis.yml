@@ -5,6 +5,7 @@ env:
     - ANDROID_TARGET=android-22
     - ANDROID_ABI=armeabi-v7a
     - ADB_INSTALL_TIMEOUT=10
+    - secure: "NKZCM5oGmy2lZb5JQdeSMwJkRq2gJtfP1It5d37aUc1oHVU1FEtuYJ58nAqfvywFBl+rhSjmLXtoNBuxn6IgAEdkZcX/nognsRGiC2mosvO69Z0zSCSKlzAKk+7gmKbe/fcAxCJ6/U70s69GMnK0DfnK+M9oEDunQnr45qilvUpDoQRLR8bCYLZGhuuyFIICefik0+JSMYHlSXzdHU90K8dJW1elR1RAU/II5ivJfBBK266sRpZt8FxW0hOtgo0iTDtRtiWZd3HqSPOP9gWRz1ZW50fa0D9l6cDm7GzVGrhWH7/y0Mc4e78Z1IGXrXDbnKtTa5KVIWnwDO4c9r17WsiOAGeiplRwx8n0kBs4BKvXU5dS/2O3jFwpb7Xw9GmfmKHX8a0CpEq9IDGQMYgzn+IhsC0LN7ClfnuWqtgGlQkrBW74SCSve0BBNhhhORTcfNLtA/C2n32QXOTmm62vB4gM8okfHTMGj0hhYjtHxlr6X5uY3H5y0l2PktA7SgRoEr87Q1PQdO6oOw6CoacrAgwnaGXkxYGGYjjO4svaoRHa7d73AsTK5emwnKbSCe8bZPJp9Rn+s6Aeinv+pojyooq3XmGjXFg7k48ud1Iprx/jbQZel6mpa5T3SBxJ9M1A1MsLtmmZQY2tNhNRBZ5RlGeIO5+6M0/LVhAMKUv31dY="
 android:
   components:
     - tools
@@ -34,7 +35,6 @@ script:
 
 before_install:
   - chmod +x gradlew
-  - openssl aes-256-cbc -K $encrypted_966628c322f0_key -iv $encrypted_966628c322f0_iv -in google-services.json.enc -out google-services.json -d
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
