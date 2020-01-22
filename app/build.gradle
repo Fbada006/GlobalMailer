@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'io.fabric'
 apply plugin: 'androidx.navigation.safeargs'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'jacoco-android'
 
 android {
     compileSdkVersion 29
