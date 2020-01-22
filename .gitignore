@@ -13,3 +13,4 @@
 .externalNativeBuild
 /app/google-services.json
 /app/release
+/google-services.json
