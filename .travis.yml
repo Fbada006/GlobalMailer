@@ -33,8 +33,8 @@ script:
   - ./gradlew connectedCheck
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_966628c322f0_key -iv $encrypted_966628c322f0_iv -in google-services.json.enc -out google-services.json -d
   - chmod +x gradlew
+  - openssl aes-256-cbc -K $encrypted_966628c322f0_key -iv $encrypted_966628c322f0_iv -in google-services.json.enc -out google-services.json -d
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -48,4 +48,3 @@ cache:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t c3be8e67-10b0-4907-a902-745fd6ced999
-
