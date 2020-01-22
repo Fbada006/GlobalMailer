@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "746291534410",
+    "firebase_url": "https://global-mail-803e0.firebaseio.com",
+    "project_id": "global-mail-803e0",
+    "storage_bucket": "global-mail-803e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746291534410:android:d90033d95009ad35",
+        "android_client_info": {
+          "package_name": "com.droidafricana.globalmail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746291534410-i9tl3d6t7resrkmirqikcjjegj65sg0o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.droidafricana.globalmail",
+            "certificate_hash": ""
+          }
+        },
+        {
+          "client_id": "746291534410-sproi1lu11gdfqudjttanmikfdjpmu1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": ""
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746291534410-sproi1lu11gdfqudjttanmikfdjpmu1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
