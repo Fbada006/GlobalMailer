@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -19,7 +18,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.droidafricana.globalmail.R
 import com.droidafricana.globalmail.databinding.MyEntNewsFragmentBinding
 import com.droidafricana.globalmail.domain.Article
-import com.droidafricana.globalmail.utils.AdapterUtils
+import com.droidafricana.globalmail.utils.CustomTabsUtils
 import com.droidafricana.globalmail.utils.FragmentUtils
 import com.droidafricana.globalmail.utils.PrefUtils
 import com.droidafricana.globalmail.view.adapter.ArticleClickListenerInterface
@@ -40,15 +39,15 @@ class EntertainmentNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListen
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {
         override fun onArticleClick(article: Article) {
-            AdapterUtils.launchCustomTabs(context, article.articleUrl)
+            CustomTabsUtils.launchCustomTabs(context, article.articleUrl)
         }
 
         override fun liked(likeButton: LikeButton?, article: Article) {
-            Toast.makeText(context, "Like button clicked!!", Toast.LENGTH_SHORT).show()
+            mEntViewModel.insertArticleIntoFavs(article)
         }
 
         override fun unLiked(likeButton: LikeButton?, article: Article) {
-            Toast.makeText(context, "UnLike button clicked!!", Toast.LENGTH_SHORT).show()
+            mEntViewModel.deleteArticleFromFavs(article)
         }
     })
 

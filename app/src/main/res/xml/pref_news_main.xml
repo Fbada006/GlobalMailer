@@ -1,76 +1,64 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory
-        android:key="pref_general_category"
-        android:title="@string/preference_general_category">
-        <ListPreference
-            android:defaultValue="@string/pref_country_news_to_display_default"
-            android:dialogIcon="@drawable/ic_world"
-            android:entries="@array/pref_country_entries"
-            android:entryValues="@array/pref_country_entry_values"
-            android:icon="@drawable/ic_world"
-            android:key="@string/pref_country_news_to_display_key"
-            android:negativeButtonText="@string/pref_close_list"
-            android:positiveButtonText="@null"
-            android:title="@string/pref_country_news_to_display_title"
-            app:useSimpleSummaryProvider="true" />
+    <ListPreference
+        android:defaultValue="@string/pref_country_news_to_display_default"
+        android:dialogIcon="@drawable/ic_world"
+        android:entries="@array/pref_country_entries"
+        android:entryValues="@array/pref_country_entry_values"
+        android:icon="@drawable/ic_world"
+        android:key="@string/pref_country_news_to_display_key"
+        android:negativeButtonText="@string/pref_close_list"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_country_news_to_display_title" />
 
-        <ListPreference
-            android:defaultValue="@string/pref_sort_by_default"
-            android:dialogIcon="@drawable/ic_sort"
-            android:entries="@array/pref_sort_by_entries"
-            android:entryValues="@array/pref_sort_by_entry_values"
-            android:icon="@drawable/ic_sort"
-            android:key="@string/pref_sort_by_key"
-            android:negativeButtonText="@string/pref_close_list"
-            android:positiveButtonText="@null"
-            android:title="@string/pref_sort_by_title"
-            app:useSimpleSummaryProvider="true" />
+    <ListPreference
+        android:defaultValue="@string/pref_sort_by_default"
+        android:dialogIcon="@drawable/ic_sort"
+        android:entries="@array/pref_sort_by_entries"
+        android:entryValues="@array/pref_sort_by_entry_values"
+        android:icon="@drawable/ic_sort"
+        android:key="@string/pref_sort_by_key"
+        android:negativeButtonText="@string/pref_close_list"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_sort_by_title" />
 
-        <ListPreference
-            android:defaultValue="@string/pref_endpoint_default"
-            android:dialogIcon="@drawable/ic_list"
-            android:entries="@array/pref_endpoint_entries"
-            android:entryValues="@array/pref_endpoint_entry_values"
-            android:icon="@drawable/ic_list"
-            android:key="@string/pref_endpoint_key"
-            android:negativeButtonText="@string/pref_close_list"
-            android:positiveButtonText="@null"
-            android:title="@string/pref_endpoint_title"
-            app:useSimpleSummaryProvider="true" />
-    </PreferenceCategory>
+    <ListPreference
+        android:defaultValue="@string/pref_endpoint_default"
+        android:dialogIcon="@drawable/ic_list"
+        android:entries="@array/pref_endpoint_entries"
+        android:entryValues="@array/pref_endpoint_entry_values"
+        android:icon="@drawable/ic_list"
+        android:key="@string/pref_endpoint_key"
+        android:negativeButtonText="@string/pref_close_list"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_endpoint_title" />
 
-    <PreferenceCategory
-        android:key="pref_notification_category"
-        android:title="@string/preference_notification_category">
-        <CheckBoxPreference
-            android:defaultValue="@bool/notification_default_value"
-            android:icon="@drawable/ic_notification"
-            android:key="@string/pref_notifications_key"
-            android:summaryOff="@string/pref_summary_off"
-            android:summaryOn="@string/pref_summary_on"
-            android:title="@string/pref_new_article_notifications_title" />
+    <CheckBoxPreference
+        android:defaultValue="@bool/notification_default_value"
+        android:icon="@drawable/ic_notification"
+        android:key="@string/pref_notifications_key"
+        android:summaryOff="@string/pref_summary_off"
+        android:summaryOn="@string/pref_summary_on"
+        android:title="@string/pref_new_article_notifications_title" />
 
-        <CheckBoxPreference
-            android:defaultValue="@string/pref_default_notification_interval"
-            android:dependency="@string/pref_notifications_key"
-            android:icon="@drawable/ic_vibration"
-            android:key="@string/pref_vibrate_key"
-            android:summaryOff="@string/pref_summary_off"
-            android:summaryOn="@string/pref_summary_on"
-            android:title="@string/pref_vibrate_title" />
+    <CheckBoxPreference
+        android:defaultValue="@string/pref_default_notification_interval"
+        android:dependency="@string/pref_notifications_key"
+        android:icon="@drawable/ic_vibration"
+        android:key="@string/pref_vibrate_key"
+        android:summaryOff="@string/pref_summary_off"
+        android:summaryOn="@string/pref_summary_on"
+        android:title="@string/pref_vibrate_title" />
 
-        <EditTextPreference
-            android:defaultValue="@integer/pref_default_notification_interval"
-            android:dependency="@string/pref_notifications_key"
-            android:dialogIcon="@drawable/ic_notification_interval"
-            android:hint="@string/pref_notification_interval_hint"
-            android:icon="@drawable/ic_notification_interval"
-            android:inputType="number"
-            android:key="@string/pref_notification_interval_key"
-            android:title="@string/pref_notification_interval_title"
-            app:useSimpleSummaryProvider="true" />
-    </PreferenceCategory>
+    <EditTextPreference
+        android:defaultValue="@integer/pref_default_notification_interval"
+        android:dependency="@string/pref_notifications_key"
+        android:dialogIcon="@drawable/ic_notification_interval"
+        android:hint="@string/pref_notification_interval_hint"
+        android:icon="@drawable/ic_notification_interval"
+        android:inputType="number"
+        android:key="@string/pref_notification_interval_key"
+        android:title="@string/pref_notification_interval_title" />
+
 
 </PreferenceScreen>

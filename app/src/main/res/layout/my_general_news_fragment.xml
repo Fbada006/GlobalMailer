@@ -59,7 +59,7 @@
             android:background="@color/colorPrimaryDark"
             android:orientation="vertical"
             android:padding="@dimen/padding_loading_bar"
-            android:visibility="visible"
+            android:visibility="gone"
             app:goneIfNotNull="@{fragmentViewModel.generalArticlesFromDb}">
 
             <com.airbnb.lottie.LottieAnimationView
@@ -75,12 +75,14 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto"
                 android:gravity="center"
                 android:paddingTop="@dimen/loading_text_top_padding"
                 android:text="@string/loading"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/loading_text_size"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:typeface="serif" />
         </RelativeLayout>
     </RelativeLayout>
 </layout>

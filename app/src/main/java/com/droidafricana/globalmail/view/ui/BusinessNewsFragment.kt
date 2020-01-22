@@ -17,7 +17,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.droidafricana.globalmail.R
 import com.droidafricana.globalmail.databinding.MyBusNewsFragmentBinding
 import com.droidafricana.globalmail.domain.Article
-import com.droidafricana.globalmail.utils.AdapterUtils
+import com.droidafricana.globalmail.utils.CustomTabsUtils
 import com.droidafricana.globalmail.utils.FragmentUtils
 import com.droidafricana.globalmail.utils.PrefUtils
 import com.droidafricana.globalmail.view.adapter.ArticleClickListenerInterface
@@ -38,7 +38,7 @@ class BusinessNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {
         override fun onArticleClick(article: Article) {
-            AdapterUtils.launchCustomTabs(context, article.articleUrl)
+            CustomTabsUtils.launchCustomTabs(context, article.articleUrl)
         }
 
         override fun liked(likeButton: LikeButton?, article: Article) {

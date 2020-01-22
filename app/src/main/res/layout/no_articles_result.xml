@@ -15,10 +15,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/roboto"
             android:text="@string/uh_oh"
             android:textColor="@android:color/white"
             android:textSize="@dimen/error_layout_main_textSize"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:typeface="serif" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="@dimen/no_article_sad_face"

@@ -2,7 +2,7 @@ package com.droidafricana.globalmail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.droidafricana.globalmail.utils.AdapterUtils
+import com.droidafricana.globalmail.utils.CustomTabsUtils
 import kotlinx.android.synthetic.main.activity_about.*
 import kotlinx.android.synthetic.main.third_party_licenses_layout.*
 
@@ -38,64 +38,64 @@ class AboutActivity : AppCompatActivity() {
 
         //TODO: Find a better way to do this
         tv_powered_by.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, NEWS_API_URL)
+            CustomTabsUtils.launchCustomTabs(this, NEWS_API_URL)
         }
         tv_privacy_policy.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, PRIVACY_POLICY_URL)
+            CustomTabsUtils.launchCustomTabs(this, PRIVACY_POLICY_URL)
         }
         tv_retrofit_2.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, RETROFIT_2_URL)
+            CustomTabsUtils.launchCustomTabs(this, RETROFIT_2_URL)
         }
         tv_okhttp3.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, OKHTTTP3_URL)
+            CustomTabsUtils.launchCustomTabs(this, OKHTTTP3_URL)
         }
         tv_picasso.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, PICASSO_URL)
+            CustomTabsUtils.launchCustomTabs(this, PICASSO_URL)
         }
         tv_firebase.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, FIREBASE_URL)
+            CustomTabsUtils.launchCustomTabs(this, FIREBASE_URL)
         }
         tv_custom_tabs.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, CHROME_CUSTOM_TABS_URL)
+            CustomTabsUtils.launchCustomTabs(this, CHROME_CUSTOM_TABS_URL)
         }
         tv_android_x.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, ANDROIDX_URL)
+            CustomTabsUtils.launchCustomTabs(this, ANDROIDX_URL)
         }
         tv_lottie.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, LOTTIE_URL)
+            CustomTabsUtils.launchCustomTabs(this, LOTTIE_URL)
         }
         tv_like_button.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, LIKE_BUTTON_URL)
+            CustomTabsUtils.launchCustomTabs(this, LIKE_BUTTON_URL)
         }
         tv_chris_gannon.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, CHRIS_GANNON_URL)
+            CustomTabsUtils.launchCustomTabs(this, CHRIS_GANNON_URL)
         }
         tv_rogger_tan.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, ROGER_TAN_URL)
+            CustomTabsUtils.launchCustomTabs(this, ROGER_TAN_URL)
         }
         tv_Hoài_Lê.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, Hoài_Lê_URL)
+            CustomTabsUtils.launchCustomTabs(this, Hoài_Lê_URL)
         }
         tv_henrique_rossatto.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, HENRIQUE_ROSSATTO_URL)
+            CustomTabsUtils.launchCustomTabs(this, HENRIQUE_ROSSATTO_URL)
         }
         tv_freepik.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, FREEPIK_URL)
+            CustomTabsUtils.launchCustomTabs(this, FREEPIK_URL)
         }
         tv_round_icons.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, ROUND_ICONS_URL)
+            CustomTabsUtils.launchCustomTabs(this, ROUND_ICONS_URL)
         }
         tv_pixel_buddha.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, PIXEL_BUDDHA_URL)
+            CustomTabsUtils.launchCustomTabs(this, PIXEL_BUDDHA_URL)
         }
         tv_pong.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, PONG_URL)
+            CustomTabsUtils.launchCustomTabs(this, PONG_URL)
         }
         tv_icon_pond.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, ICON_POND_URL)
+            CustomTabsUtils.launchCustomTabs(this, ICON_POND_URL)
         }
         tv_icon_eucalyp.setOnClickListener {
-            AdapterUtils.launchCustomTabs(this, EUCALYP_URL)
+            CustomTabsUtils.launchCustomTabs(this, EUCALYP_URL)
         }
     }
 }

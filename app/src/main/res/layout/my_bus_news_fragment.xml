@@ -76,6 +76,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
+                android:fontFamily="@font/roboto"
+                android:typeface="serif"
                 android:paddingTop="@dimen/loading_text_top_padding"
                 android:text="@string/loading"
                 android:textColor="@android:color/black"

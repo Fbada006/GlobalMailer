@@ -10,9 +10,11 @@ import com.droidafricana.globalmail.chromeCustomTabs.customTabs.CustomTabActivit
 import com.droidafricana.globalmail.chromeCustomTabs.receiver.CustomTabsBroadcastReceiver
 
 
-object AdapterUtils {
+object CustomTabsUtils {
     private const val COPY_LINK_REQUEST_CODE = 0
     private const val ANDROID_APP_SCHEME = "android-app://"
+    private const val DISABLE_DOWNLOAD_BUTTON_EXTRA =
+            "org.chromium.chrome.browser.customtabs.EXTRA_DISABLE_DOWNLOAD_BUTTON"
 
     /*Set up the chrome custom tabs in the adapter*/
     fun launchCustomTabs(context: Context?, url: String) {
@@ -43,6 +45,9 @@ object AdapterUtils {
         //Let websites know that this app is the one sending it traffic
         customTabsIntent.intent.putExtra(Intent.EXTRA_REFERRER,
                 Uri.parse(ANDROID_APP_SCHEME + context.packageName))
+
+        //Disable the download button for policy purposes
+        customTabsIntent.intent.putExtra(DISABLE_DOWNLOAD_BUTTON_EXTRA, true)
 
         CustomTabActivityHelper.openCustomTab(context, customTabsIntent, Uri.parse(url)
         ) { context1, uri ->

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.droidafricana.globalmail.R
 import com.droidafricana.globalmail.databinding.FragmentSearchBinding
 import com.droidafricana.globalmail.domain.Article
-import com.droidafricana.globalmail.utils.AdapterUtils
+import com.droidafricana.globalmail.utils.CustomTabsUtils
 import com.droidafricana.globalmail.utils.FragmentUtils
 import com.droidafricana.globalmail.view.adapter.SearchArticleAdapter
 import com.droidafricana.globalmail.view.adapter.SearchArticleClickListenerInterface
@@ -27,7 +27,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
 
     private val mMyArticleAdapter = SearchArticleAdapter(object : SearchArticleClickListenerInterface {
         override fun onArticleClick(article: Article) {
-            AdapterUtils.launchCustomTabs(context, article.articleUrl)
+            CustomTabsUtils.launchCustomTabs(context, article.articleUrl)
         }
     })
 

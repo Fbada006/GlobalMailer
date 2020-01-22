@@ -5,7 +5,7 @@ buildscript {
         // Versions for all the dependencies we plan to use. It's particularly useful for kotlin and
         // navigation where the versions of the plugin needs to be the same as the version of the
         // library defined in the app Gradle file
-        version_android_gradle_plugin = '3.4.2'
+        version_android_gradle_plugin = '3.5.3'
         version_app_compat = '1.1.0-rc01'
         version_core = '1.0.2'
         version_constraint_layout = "2.0.0-beta2"
@@ -42,8 +42,9 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:$version_android_gradle_plugin"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
-        classpath 'com.google.gms:google-services:4.3.0'
-        classpath 'io.fabric.tools:gradle:1.29.0'
+        classpath 'com.google.gms:google-services:4.3.3'
+        classpath 'io.fabric.tools:gradle:1.31.2'
+        classpath 'com.dicedmelon.gradle:jacoco-android:0.1.4'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

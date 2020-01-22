@@ -1,7 +1,6 @@
 package com.droidafricana.globalmail
 
 import android.app.Application
-import android.os.Build
 import androidx.work.*
 import com.droidafricana.globalmail.notifications.RefreshArticleWork
 import com.droidafricana.globalmail.utils.PrefUtils
@@ -24,11 +23,6 @@ class ArticleApplication : Application() {
         val constraints = Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.CONNECTED)
                 .setRequiresBatteryNotLow(true)
-                .apply {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        setRequiresDeviceIdle(true)
-                    }
-                }
                 .build()
 
         // Add the constraints to the repeatingRequest definition.

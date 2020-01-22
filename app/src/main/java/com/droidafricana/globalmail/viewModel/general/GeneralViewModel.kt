@@ -52,7 +52,6 @@ class GeneralViewModel internal constructor(application: Application, articleCat
         val isConnected: Boolean = activeNetwork?.isConnected == true
 
         if (isConnected) {
-            //Surround this because even a connection can throw an error
             articleCoroutineScope.launch {
                 articleRepository.refreshGeneralArticleDatabaseFromNetwork()
             }

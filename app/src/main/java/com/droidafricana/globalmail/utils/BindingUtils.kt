@@ -10,10 +10,12 @@ import com.droidafricana.globalmail.R
 import com.droidafricana.globalmail.domain.Article
 import com.squareup.picasso.Picasso
 
+/*This tag cancels and restarts the loading for good data usage */
 object PicassoTags {
     const val ARTICLE_TAG = "mailerArticlesTag"
 }
 
+/*Show the image of the article if available*/
 @BindingAdapter("imageArticle")
 fun ImageView.setArticleImage(currentArticle: Article) {
     val articleUrlToImage = currentArticle.articleUrlToImage
@@ -36,6 +38,7 @@ fun ImageView.setArticleImage(currentArticle: Article) {
     }
 }
 
+/*This adapter sets the article content and description depending on the available API data*/
 @BindingAdapter("descriptionArticle")
 fun TextView.setArticleDescription(currentArticle: Article) {
     val articleDesc = currentArticle.articleDescription
