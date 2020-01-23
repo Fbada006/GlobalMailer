@@ -6,9 +6,6 @@ import androidx.lifecycle.*
 import com.droidafricana.globalmail.database.ArticleDatabase
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.repository.ArticleRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 val TAG = "FavsViewModel"
