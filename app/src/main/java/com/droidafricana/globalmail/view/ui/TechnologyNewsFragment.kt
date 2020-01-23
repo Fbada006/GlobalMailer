@@ -83,13 +83,13 @@ class TechnologyNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener 
         mFavsViewModel = ViewModelProviders.of(this, favArticleViewModelFactory)
                 .get(FavsViewModel::class.java)
 
-        mFavsViewModel.favArticlesFromDb.observe(FavsFragment(), Observer {
+        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()) {
                 favsList = it
             }
         })
 
-        mTechViewModel.techArticlesFromDb.observe(this, Observer {
+        mTechViewModel.techArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 mMyArticleAdapter.submitList(it)
 
@@ -129,7 +129,7 @@ class TechnologyNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener 
         mTechViewModel.refreshTechDataInDb(mApplication)
 
         //Observe the LiveData object again and update the UI
-        FragmentUtils.observeForArticlesFromDb(this, mTechViewModel.techArticlesFromDb
+        FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mTechViewModel.techArticlesFromDb
                 , mMyArticleAdapter)
 
         //Hide the refreshing indicator
@@ -145,7 +145,7 @@ class TechnologyNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener 
             mTechViewModel.refreshTechDataInDb(mApplication)
 
             //Observe the LiveData object again and update the UI
-            FragmentUtils.observeForArticlesFromDb(this, mTechViewModel.techArticlesFromDb
+            FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mTechViewModel.techArticlesFromDb
                     , mMyArticleAdapter)
         }
         //Set the flag back to false to avoid the refresh being a one time thing

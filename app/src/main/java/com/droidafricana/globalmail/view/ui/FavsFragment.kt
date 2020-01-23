@@ -65,10 +65,10 @@ class FavsFragment : Fragment() {
         mFavsViewModel = ViewModelProviders.of(this, articleViewModelFactory)
                 .get(FavsViewModel::class.java)
 
-        FragmentUtils.observeForArticlesFromDb(this, mFavsViewModel.favArticlesFromDb,
+        FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mFavsViewModel.favArticlesFromDb,
                 mMyArticleAdapter)
 
-        mFavsViewModel.favArticlesFromDb.observe(this, Observer { articleList ->
+        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, Observer { articleList ->
             if (articleList.isNullOrEmpty()) {
                 //Show the empty layout and hide the clear button
                 binding.layoutEmptyFavs.visibility = View.VISIBLE
@@ -88,7 +88,7 @@ class FavsFragment : Fragment() {
             }
         })
 
-        mFavsViewModel.showSnackBarEvent.observe(this, Observer {
+        mFavsViewModel.showSnackBarEvent.observe(viewLifecycleOwner, Observer {
             if (it == true) { // Observed state is true and all data is cleared.
                 Snackbar.make(activity!!.findViewById(android.R.id.content),
                         getString(R.string.cleared_message),

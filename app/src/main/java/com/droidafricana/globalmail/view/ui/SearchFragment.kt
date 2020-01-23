@@ -79,7 +79,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
 
         })
 
-        FragmentUtils.observeViewModelForLoadingStatus(context, this,
+        FragmentUtils.observeViewModelForLoadingStatus(context, viewLifecycleOwner,
                 viewModel.articleLoadingStatus, binding)
         return false
     }

@@ -82,13 +82,13 @@ class HealthNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         mFavsViewModel = ViewModelProviders.of(this, favArticleViewModelFactory)
                 .get(FavsViewModel::class.java)
 
-        mFavsViewModel.favArticlesFromDb.observe(FavsFragment(), Observer {
+        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()) {
                 favsList = it
             }
         })
 
-        mHealthViewModel.healthArticlesFromDb.observe(this, Observer {
+        mHealthViewModel.healthArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 mMyArticleAdapter.submitList(it)
 
@@ -128,7 +128,7 @@ class HealthNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         mHealthViewModel.refreshHealthDataInDb(mApplication)
 
         //Observe the LiveData object again and update the UI
-        FragmentUtils.observeForArticlesFromDb(this, mHealthViewModel.healthArticlesFromDb
+        FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mHealthViewModel.healthArticlesFromDb
                 , mMyArticleAdapter)
 
         //Hide the refreshing indicator
@@ -144,7 +144,7 @@ class HealthNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             mHealthViewModel.refreshHealthDataInDb(mApplication)
 
             //Observe the LiveData object again and update the UI
-            FragmentUtils.observeForArticlesFromDb(this, mHealthViewModel.healthArticlesFromDb
+            FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mHealthViewModel.healthArticlesFromDb
                     , mMyArticleAdapter)
         }
         //Set the flag back to false to avoid the refresh being a one time thing

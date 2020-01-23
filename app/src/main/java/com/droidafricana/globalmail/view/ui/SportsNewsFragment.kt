@@ -82,13 +82,13 @@ class SportsNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         mFavsViewModel = ViewModelProviders.of(this, favArticleViewModelFactory)
                 .get(FavsViewModel::class.java)
 
-        mFavsViewModel.favArticlesFromDb.observe(FavsFragment(), Observer {
+        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (!it.isNullOrEmpty()) {
                 favsList = it
             }
         })
 
-        mSportsViewModel.sportsArticlesFromDb.observe(this, Observer {
+        mSportsViewModel.sportsArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 mMyArticleAdapter.submitList(it)
 
@@ -128,7 +128,7 @@ class SportsNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         mSportsViewModel.refreshSportsDataInDb(mApplication)
 
         //Observe the LiveData object again and update the UI
-        FragmentUtils.observeForArticlesFromDb(this, mSportsViewModel.sportsArticlesFromDb
+        FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mSportsViewModel.sportsArticlesFromDb
                 , mMyArticleAdapter)
 
         //Hide the refreshing indicator
@@ -144,7 +144,7 @@ class SportsNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             mSportsViewModel.refreshSportsDataInDb(mApplication)
 
             //Observe the LiveData object again and update the UI
-            FragmentUtils.observeForArticlesFromDb(this, mSportsViewModel.sportsArticlesFromDb
+            FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mSportsViewModel.sportsArticlesFromDb
                     , mMyArticleAdapter)
         }
         //Set the flag back to false to avoid the refresh being a one time thing
