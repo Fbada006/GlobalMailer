@@ -7,7 +7,7 @@
 
         <variable
             name="sportsFragmentViewModel"
-            type="com.droidafricana.globalmail.viewModel.sports.SportsViewModel" />
+            type="com.droidafricana.globalmail.ui.sports.SportsViewModel" />
     </data>
 
     <RelativeLayout

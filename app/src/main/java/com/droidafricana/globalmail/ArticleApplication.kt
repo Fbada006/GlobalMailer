@@ -20,6 +20,12 @@ class ArticleApplication : Application() {
 
     //  use a Builder to define a repeatingRequest variable to handle scheduling work.
     private fun setupRecurringWork() {
+//        val workManagerConfig = Configuration.Builder()
+//                .setWorkerFactory(RefreshArticleWork.Factory())
+//                .build()
+//
+//        WorkManager.initialize(this, workManagerConfig)
+
         val constraints = Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.CONNECTED)
                 .setRequiresBatteryNotLow(true)
@@ -34,11 +40,10 @@ class ArticleApplication : Application() {
                         .build()
 
         // get an instance of WorkManager and launch call enqueuePeriodicWork() to schedule the work.
-        WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
-                RefreshArticleWork.WORK_NAME,
+        WorkManager.getInstance(this).enqueueUniquePeriodicWork(
+                RefreshArticleWork.REFRESH_ARTICLE_WORK_NAME,
                 ExistingPeriodicWorkPolicy.KEEP,
                 repeatingRequest)
-
     }
 
     override fun onCreate() {

@@ -35,9 +35,9 @@ interface SportsArticleDatabaseDao {
 
     //Add generalArticles to the database list with an argument of a variable number of SportsDatabaseArticle objects
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllSportsArticles(vararg articles: SportsDatabaseArticle)
+    suspend fun insertAllSportsArticles(vararg articles: SportsDatabaseArticle)
 
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM sports_articles_table")
-    fun clearSportsTable()
+    suspend fun clearSportsTable()
 }

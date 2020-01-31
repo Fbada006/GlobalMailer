@@ -35,9 +35,9 @@ interface HealthArticleDatabaseDao {
 
     //Add generalArticles to the database list with an argument of a variable number of HealthDatabaseArticle objects
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllHealthArticles(vararg articles: HealthDatabaseArticle)
+    suspend fun insertAllHealthArticles(vararg articles: HealthDatabaseArticle)
 
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM health_articles_table")
-    fun clearHealthTable()
+    suspend fun clearHealthTable()
 }

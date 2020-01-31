@@ -7,7 +7,7 @@
 
         <variable
             name="techFragmentViewModel"
-            type="com.droidafricana.globalmail.viewModel.technology.TechnologyViewModel" />
+            type="com.droidafricana.globalmail.ui.technology.TechnologyViewModel" />
     </data>
 
     <RelativeLayout

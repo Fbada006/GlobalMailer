@@ -3,20 +3,18 @@ package com.droidafricana.globalmail.notifications
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.droidafricana.globalmail.Constants
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.service.model.asDomainModel
 import com.droidafricana.globalmail.service.network.ArticleApi
+import com.droidafricana.globalmail.utils.Constants
 import com.droidafricana.globalmail.utils.NotificationUtils
 import com.droidafricana.globalmail.utils.PrefUtils
 import retrofit2.HttpException
 
 class RefreshArticleWork(appContext: Context, params: WorkerParameters) :
         CoroutineWorker(appContext, params) {
-    private val TAG = RefreshArticleWork::class.java.simpleName
-
     companion object {
-        const val WORK_NAME = "RefreshArticleWorker"
+        const val REFRESH_ARTICLE_WORK_NAME = "RefreshArticleWorker"
     }
 
     override suspend fun doWork(): Result {
@@ -36,4 +34,10 @@ class RefreshArticleWork(appContext: Context, params: WorkerParameters) :
             Result.retry()
         }
     }
+
+//    class Factory : WorkerFactory() {
+//        override fun createWorker(appContext: Context, workerClassName: String, workerParameters: WorkerParameters): ListenableWorker? {
+//            return RefreshArticleWork(appContext, workerParameters)
+//        }
+//    }
 }

@@ -11,7 +11,7 @@
 
         <variable
             name="articleClickListener"
-            type="com.droidafricana.globalmail.view.adapter.ArticleClickListenerInterface" />
+            type="com.droidafricana.globalmail.adapter.ArticleClickListenerInterface" />
     </data>
 
     <androidx.cardview.widget.CardView

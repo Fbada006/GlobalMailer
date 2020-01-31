@@ -1,7 +1,7 @@
 package com.droidafricana.globalmail.service.network
 
-import com.droidafricana.globalmail.Constants
 import com.droidafricana.globalmail.service.model.ArticleResponse
+import com.droidafricana.globalmail.utils.Constants
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory

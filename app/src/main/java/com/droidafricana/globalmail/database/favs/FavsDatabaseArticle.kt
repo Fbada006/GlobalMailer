@@ -35,13 +35,13 @@ interface FavsArticleDatabaseDao {
 
     //Add generalArticles to the database list with an argument of a variable number of FavsDatabaseArticle objects
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertFavArticle(article: FavsDatabaseArticle)
+    suspend fun insertFavArticle(article: FavsDatabaseArticle)
 
     //Delete a single item
     @Delete
-    fun deleteArticle(articleTitle: FavsDatabaseArticle)
+    suspend fun deleteArticle(articleTitle: FavsDatabaseArticle)
 
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM favs_articles_table")
-    fun clearFavsTable()
+    suspend fun clearFavsTable()
 }
