@@ -7,7 +7,7 @@
 
         <variable
             name="fragmentViewModel"
-            type="com.droidafricana.globalmail.viewModel.general.GeneralViewModel" />
+            type="com.droidafricana.globalmail.ui.general.GeneralViewModel" />
     </data>
 
     <RelativeLayout

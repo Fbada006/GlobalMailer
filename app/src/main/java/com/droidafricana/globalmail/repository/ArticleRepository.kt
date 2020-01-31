@@ -3,7 +3,6 @@ package com.droidafricana.globalmail.repository
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
-import com.droidafricana.globalmail.Constants
 import com.droidafricana.globalmail.database.ArticleDatabase
 import com.droidafricana.globalmail.database.business.mappedAsDomainArticleModel
 import com.droidafricana.globalmail.database.entertainment.mappedAsDomainArticleModel
@@ -16,11 +15,10 @@ import com.droidafricana.globalmail.database.technology.mappedAsDomainArticleMod
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.service.model.*
 import com.droidafricana.globalmail.service.network.ArticleApi
+import com.droidafricana.globalmail.utils.Constants
 import com.droidafricana.globalmail.utils.PrefUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-
-val TAG = "ArticleRepository---"
 
 //Responsible for writing and reading from the database. This controls everything
 class ArticleRepository(private val context: Context,

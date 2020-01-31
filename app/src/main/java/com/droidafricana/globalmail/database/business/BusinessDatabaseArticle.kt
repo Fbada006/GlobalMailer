@@ -35,9 +35,9 @@ interface BusinessArticleDatabaseDao {
 
     //Add generalArticles to the database list with an argument of a variable number of BusinessDatabaseArticle objects
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllBusinessArticles(vararg articles: BusinessDatabaseArticle)
+    suspend fun insertAllBusinessArticles(vararg articles: BusinessDatabaseArticle)
 
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM business_articles_table")
-    fun clearBusinessTable()
+    suspend fun clearBusinessTable()
 }

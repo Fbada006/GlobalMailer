@@ -3,18 +3,17 @@ package com.droidafricana.globalmail.utils
 import android.content.Context
 import android.view.View
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.droidafricana.globalmail.R
+import com.droidafricana.globalmail.adapter.MyArticleAdapter
 import com.droidafricana.globalmail.databinding.FragmentSearchBinding
 import com.droidafricana.globalmail.domain.Article
-import com.droidafricana.globalmail.view.adapter.MyArticleAdapter
-import com.droidafricana.globalmail.viewModel.search.ArticleApiStatus
+import com.droidafricana.globalmail.ui.search.ArticleApiStatus
 import com.squareup.picasso.Picasso
-
-const val TAG = "FragmentUtils"
 
 object FragmentUtils {
     /**
@@ -66,27 +65,6 @@ object FragmentUtils {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
-//    /**
-//     * @param owner         is the owner of the lifecycle
-//     * @param articleViewModel is the ViewModel with LiveData to observe
-//     * @param articleAdapter is the adapter
-//     */
-//    fun refreshUI(application: Application, owner: Fragment, articlesFromDb: LiveData<List<Article>>,
-//                  articleAdapter: MyArticleAdapter, binding: MySportsNewsFragmentBinding,
-//                  articleViewModel: SportsViewModel) {
-//
-//        binding.layoutSwipeRefresh.setOnRefreshListener {
-//            //Make the API call
-//            articleViewModel.refreshSportsDataInDb(application)
-//
-//            //Observe the LiveData object again and update the UI
-//            observeForArticlesFromDb(owner, articlesFromDb, articleAdapter)
-//
-//            //Hide the refreshing indicator
-//            binding.layoutSwipeRefresh.isRefreshing = false
-//        }
-//    }
-
     /*This method listens to scrolls and determines if Picasso should load images*/
     fun listenToUserScrolls(recyclerView: RecyclerView) {
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -102,4 +80,9 @@ object FragmentUtils {
             }
         })
     }
+}
+
+fun Fragment.getArticleViewModelFactory(category: String? = null, queryParam: String? = null): ArticleViewModelFactory {
+    val application = activity?.application!!
+    return ArticleViewModelFactory(application, category, queryParam)
 }

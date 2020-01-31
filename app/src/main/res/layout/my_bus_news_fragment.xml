@@ -7,7 +7,7 @@
 
         <variable
             name="busFragmentViewModel"
-            type="com.droidafricana.globalmail.viewModel.business.BusinessViewModel" />
+            type="com.droidafricana.globalmail.ui.business.BusinessViewModel" />
     </data>
 
     <RelativeLayout

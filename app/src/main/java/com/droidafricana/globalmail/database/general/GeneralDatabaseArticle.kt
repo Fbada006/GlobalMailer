@@ -35,11 +35,11 @@ interface GeneralArticleDatabaseDao {
 
     //Add generalArticles to the database list with an argument of a variable number of GeneralDatabaseArticle objects
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllGeneralArticles(vararg articles: GeneralDatabaseArticle)
+    suspend fun insertAllGeneralArticles(vararg articles: GeneralDatabaseArticle)
 
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM general_articles_table")
-    fun clearGeneralTable()
+    suspend fun clearGeneralTable()
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
     fun update(generalDatabaseArticle: GeneralDatabaseArticle)

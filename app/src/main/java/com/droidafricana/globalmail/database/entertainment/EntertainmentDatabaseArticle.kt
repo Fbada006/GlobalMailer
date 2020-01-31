@@ -35,9 +35,9 @@ interface EntertainmentArticleDatabaseDao {
 
     //Add generalArticles to the database list with an argument of a variable number of EntDatabaseArticle objects
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllEntArticles(vararg articles: EntDatabaseArticle)
+    suspend fun insertAllEntArticles(vararg articles: EntDatabaseArticle)
 
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM ent_articles_table")
-    fun clearEntTable()
+    suspend fun clearEntTable()
 }

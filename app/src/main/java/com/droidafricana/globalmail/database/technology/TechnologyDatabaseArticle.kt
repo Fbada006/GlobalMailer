@@ -39,5 +39,5 @@ interface TechnologyArticleDatabaseDao {
 
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM technology_articles_table")
-    fun clearTechnologyTable()
+    suspend fun clearTechnologyTable()
 }

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/sports_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.SportsNewsFragment"
+        android:name="com.droidafricana.globalmail.ui.sports.SportsNewsFragment"
         android:label="@string/category_sports"
         tools:layout="@layout/my_general_news_fragment">
         <action
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/top_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.TopNewsFragment"
+        android:name="com.droidafricana.globalmail.ui.general.TopNewsFragment"
         android:label="@string/app_name"
         tools:layout="@layout/my_general_news_fragment">
         <action
@@ -26,7 +26,7 @@
 
     <fragment
         android:id="@+id/entertainment_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.EntertainmentNewsFragment"
+        android:name="com.droidafricana.globalmail.ui.entertainment.EntertainmentNewsFragment"
         android:label="@string/category_entertainment"
         tools:layout="@layout/my_general_news_fragment">
 
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/technology_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.TechnologyNewsFragment"
+        android:name="com.droidafricana.globalmail.ui.technology.TechnologyNewsFragment"
         android:label="@string/category_technology"
         tools:layout="@layout/my_general_news_fragment">
         <action
@@ -47,7 +47,7 @@
 
     <fragment
         android:id="@+id/business_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.BusinessNewsFragment"
+        android:name="com.droidafricana.globalmail.ui.business.BusinessNewsFragment"
         android:label="@string/category_business"
         tools:layout="@layout/my_general_news_fragment">
         <action
@@ -57,7 +57,7 @@
 
     <fragment
         android:id="@+id/health_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.HealthNewsFragment"
+        android:name="com.droidafricana.globalmail.ui.health.HealthNewsFragment"
         android:label="@string/category_health"
         tools:layout="@layout/my_general_news_fragment">
         <action
@@ -67,7 +67,7 @@
 
     <fragment
         android:id="@+id/science_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.ScienceNewsFragment"
+        android:name="com.droidafricana.globalmail.ui.science.ScienceNewsFragment"
         android:label="@string/category_science"
         tools:layout="@layout/my_general_news_fragment">
         <action
@@ -77,7 +77,7 @@
 
     <fragment
         android:id="@+id/settings_dest"
-        android:name="com.droidafricana.globalmail.view.ui.SettingsFragment"
+        android:name="com.droidafricana.globalmail.ui.SettingsFragment"
         android:label="@string/action_settings" />
 
     <activity
@@ -87,7 +87,7 @@
 
     <fragment
         android:id="@+id/fragment_search_dest"
-        android:name="com.droidafricana.globalmail.view.ui.SearchFragment"
+        android:name="com.droidafricana.globalmail.ui.search.SearchFragment"
         android:label="@string/action_search"
         tools:layout="@layout/fragment_search">
 
@@ -101,7 +101,7 @@
 
     <fragment
         android:id="@+id/fav_news_dest"
-        android:name="com.droidafricana.globalmail.view.ui.FavsFragment"
+        android:name="com.droidafricana.globalmail.ui.favs.FavsFragment"
         android:label="@string/category_favorites"
         tools:layout="@layout/my_fav_news_fragment">
         <action

@@ -7,7 +7,7 @@
 
         <variable
             name="entFragmentViewModel"
-            type="com.droidafricana.globalmail.viewModel.entertainment.EntertainmentViewModel" />
+            type="com.droidafricana.globalmail.ui.entertainment.EntertainmentViewModel" />
     </data>
 
     <RelativeLayout
