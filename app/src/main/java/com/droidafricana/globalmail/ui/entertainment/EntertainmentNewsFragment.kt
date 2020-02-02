@@ -2,13 +2,16 @@ package com.droidafricana.globalmail.ui.entertainment
 
 import android.app.Application
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.droidafricana.globalmail.R
@@ -23,6 +26,7 @@ import com.droidafricana.globalmail.utils.FragmentUtils
 import com.droidafricana.globalmail.utils.PrefUtils
 import com.droidafricana.globalmail.utils.getArticleViewModelFactory
 import com.like.LikeButton
+import kotlinx.android.synthetic.main.activity_main.*
 
 class EntertainmentNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
@@ -95,14 +99,10 @@ class EntertainmentNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListen
         return binding.root
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.menu_fragment, menu)
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.fragment_search -> {
-                findNavController().navigate(
+                NavHostFragment.findNavController(my_nav_host_fragment).navigate(
                         EntertainmentNewsFragmentDirections.actionEntertainmentNewsDestToActivitySearchDest(
                                 PrefUtils.categoryEnt(context!!)!!)
                 )

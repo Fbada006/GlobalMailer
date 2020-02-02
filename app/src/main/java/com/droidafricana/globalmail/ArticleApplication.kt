@@ -26,16 +26,14 @@ class ArticleApplication : Application() {
 //
 //        WorkManager.initialize(this, workManagerConfig)
 
-        // Add the constraints to the repeatingRequest definition.
         val constraints = Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.CONNECTED)
                 .setRequiresBatteryNotLow(true)
                 .build()
 
-        //The interval between work
+        // Add the constraints to the repeatingRequest definition.
         val interval = PrefUtils.notificationInterval(applicationContext).toLong()
 
-        //The actual work that will run
         val repeatingRequest =
                 PeriodicWorkRequestBuilder<RefreshArticleWork>(interval, TimeUnit.HOURS)
                         .setConstraints(constraints)
