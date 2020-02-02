@@ -43,8 +43,11 @@ object NotificationUtils {
         notificationManager.cancelAll()
     }
 
+    /*This method handles the creation of the channel, setting notification attribs
+    * and sending the actual notification*/
     private fun sendArticleNotificationToUser(context: Context, article: Article) {
-        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val notificationManager =
+                context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val mChannel = NotificationChannel(
@@ -98,19 +101,17 @@ object NotificationUtils {
                 PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
+    /*This method executes depending on the action
+    * TODO: Needs some cleaning to set actions correctly*/
     fun executeArticleNotificationTask(context: Context, action: String, article: Article) {
         if (ACTION_DISMISS_NOTIFICATION == action) {
             clearAllNotifications(context)
         } else if (ACTION_ISSUE_ARTICLE_NOTIFICATION == action) {
             if (PrefUtils.areNotificationsEnabled(context)) {
-                issueArticleNotification(context, article)
+                sendArticleNotificationToUser(context, article)
+                vibrateDevice(context)
             }
         }
-    }
-
-    private fun issueArticleNotification(context: Context, article: Article) {
-        sendArticleNotificationToUser(context, article)
-        vibrateDevice(context)
     }
 
     private fun vibrateDevice(context: Context) {
