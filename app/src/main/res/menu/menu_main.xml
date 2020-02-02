@@ -19,12 +19,4 @@
         android:title="@string/action_settings"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/fragment_search"
-        android:icon="@drawable/ic_search"
-        android:menuCategory="secondary"
-        android:orderInCategory="105"
-        android:title="@string/action_search"
-        app:showAsAction="ifRoom" />
-
 </menu>
