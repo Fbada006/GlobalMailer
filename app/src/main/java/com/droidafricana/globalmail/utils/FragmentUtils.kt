@@ -8,10 +8,12 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
+import com.droidafricana.globalmail.ArticleApplication
 import com.droidafricana.globalmail.R
 import com.droidafricana.globalmail.adapter.MyArticleAdapter
 import com.droidafricana.globalmail.databinding.FragmentSearchBinding
 import com.droidafricana.globalmail.domain.Article
+import com.droidafricana.globalmail.repository.ArticleRepository
 import com.droidafricana.globalmail.ui.search.ArticleApiStatus
 import com.squareup.picasso.Picasso
 
@@ -82,7 +84,8 @@ object FragmentUtils {
     }
 }
 
-fun Fragment.getArticleViewModelFactory(category: String? = null, queryParam: String? = null): ArticleViewModelFactory {
+fun Fragment.getArticleViewModelFactory(category: String, queryParam: String? = null): ArticleViewModelFactory {
     val application = activity?.application!!
-    return ArticleViewModelFactory(application, category, queryParam)
+    val articleRepository: ArticleRepository = (application as ArticleApplication).articleRepository(category)
+    return ArticleViewModelFactory(application, category, queryParam, articleRepository)
 }

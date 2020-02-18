@@ -3,6 +3,7 @@ package com.droidafricana.globalmail
 import android.app.Application
 import androidx.work.*
 import com.droidafricana.globalmail.notifications.RefreshArticleWork
+import com.droidafricana.globalmail.repository.ArticleRepository
 import com.droidafricana.globalmail.utils.PrefUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -10,7 +11,9 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 class ArticleApplication : Application() {
-    private val TAG: String = ArticleApplication::class.java.name
+
+    fun articleRepository(articleCategory: String): ArticleRepository =
+            ServiceLocator.providesArticleRepository(this, articleCategory)
 
     val applicationScope = CoroutineScope(Dispatchers.Default)
 

@@ -28,12 +28,14 @@ class ScienceNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     lateinit var binding: MyScienceNewsFragmentBinding
     private val mScienceViewModel by viewModels<ScienceViewModel> {
-        getArticleViewModelFactory(PrefUtils.categoryScience(requireContext()))
+        getArticleViewModelFactory(category = PrefUtils.categoryScience(requireContext())!!)
     }
+
     private lateinit var mApplication: Application
     private val mFavsViewModel by viewModels<FavsViewModel> {
-        getArticleViewModelFactory()
+        getArticleViewModelFactory(category = "")
     }
+
     private var favsList: List<Article> = ArrayList()
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {

@@ -28,12 +28,14 @@ class EntertainmentNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListen
 
     lateinit var binding: MyEntNewsFragmentBinding
     private val mEntViewModel by viewModels<EntertainmentViewModel> {
-        getArticleViewModelFactory(PrefUtils.categoryEnt(requireContext()))
+        getArticleViewModelFactory(category = PrefUtils.categoryEnt(requireContext())!!)
     }
+
     private lateinit var mApplication: Application
     private val mFavsViewModel by viewModels<FavsViewModel> {
-        getArticleViewModelFactory()
+        getArticleViewModelFactory(category = "")
     }
+
     private var favsList: List<Article> = ArrayList()
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {

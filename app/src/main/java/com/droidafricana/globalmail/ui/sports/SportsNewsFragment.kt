@@ -27,12 +27,14 @@ import com.like.LikeButton
 class SportsNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     lateinit var binding: MySportsNewsFragmentBinding
     private val mSportsViewModel by viewModels<SportsViewModel> {
-        getArticleViewModelFactory(PrefUtils.categorySports(requireContext()))
+        getArticleViewModelFactory(category = PrefUtils.categorySports(requireContext())!!)
     }
+
     private lateinit var mApplication: Application
     private val mFavsViewModel by viewModels<FavsViewModel> {
-        getArticleViewModelFactory()
+        getArticleViewModelFactory(category = "")
     }
+
     private var favsList: List<Article> = ArrayList()
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {

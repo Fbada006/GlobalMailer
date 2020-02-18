@@ -29,11 +29,11 @@ class BusinessNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     lateinit var binding: MyBusNewsFragmentBinding
     private val mBusViewModel by viewModels<BusinessViewModel> {
-        getArticleViewModelFactory(PrefUtils.categoryBus(requireContext()))
+        getArticleViewModelFactory(PrefUtils.categoryBus(requireContext())!!)
     }
     private lateinit var mApplication: Application
     private val mFavsViewModel by viewModels<FavsViewModel> {
-        getArticleViewModelFactory()
+        getArticleViewModelFactory(category = "")
     }
     private var favsList: List<Article> = ArrayList()
 

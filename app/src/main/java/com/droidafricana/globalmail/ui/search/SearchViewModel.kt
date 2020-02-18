@@ -39,7 +39,7 @@ class SearchViewModel internal constructor(application: Application,
 
     fun getLiveArticles(context: Context?, articleCategory: String?, queryParam: String?) {
         viewModelScope.launch {
-            val getArticlesDeferred = ArticleApi.retrofitService.getArticleListAsync(
+            val getArticlesDeferred = ArticleApi.apiService.getArticleListAsync(
                     getEndpoint(context), queryParam, articleCategory,
                     getCountry(context), Constants.PAGE_SIZE, getSortByParam(context),
                     Constants.TEST_API_KEY

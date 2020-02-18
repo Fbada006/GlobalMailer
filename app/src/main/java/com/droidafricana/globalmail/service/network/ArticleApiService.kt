@@ -61,5 +61,5 @@ private val retrofit = Retrofit.Builder()
  * A public Api object that exposes the lazy-initialized Retrofit service
  */
 object ArticleApi {
-    val retrofitService: ArticleApiService by lazy { retrofit.create(ArticleApiService::class.java) }
+    val apiService: ArticleApiService by lazy { retrofit.create(ArticleApiService::class.java) }
 }

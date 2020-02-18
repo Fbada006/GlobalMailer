@@ -19,7 +19,7 @@ class RefreshArticleWork(appContext: Context, params: WorkerParameters) :
 
     override suspend fun doWork(): Result {
         return try {
-            val articleListDeferred = ArticleApi.retrofitService.getArticleListAsync(
+            val articleListDeferred = ArticleApi.apiService.getArticleListAsync(
                     PrefUtils.getEndpoint(applicationContext), null,
                     PrefUtils.categoryGeneral(applicationContext), PrefUtils.getCountry(applicationContext),
                     Constants.PAGE_SIZE, PrefUtils.getSortByParam(applicationContext),

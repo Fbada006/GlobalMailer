@@ -40,7 +40,4 @@ interface GeneralArticleDatabaseDao {
     //Empty the database if we are getting new generalArticles
     @Query("DELETE FROM general_articles_table")
     suspend fun clearGeneralTable()
-
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun update(generalDatabaseArticle: GeneralDatabaseArticle)
 }

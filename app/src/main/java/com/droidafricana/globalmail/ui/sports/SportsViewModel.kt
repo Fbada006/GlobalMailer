@@ -4,25 +4,21 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.droidafricana.globalmail.database.ArticleDatabase
 import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.repository.ArticleRepository
 import kotlinx.coroutines.launch
 
-class SportsViewModel internal constructor(application: Application, articleCategory: String?) :
+class SportsViewModel constructor(application: Application,
+                                  private val articleRepository: ArticleRepository) :
         ViewModel() {
-
-    //Database instance for use with the repository
-    private val articleDatabase = ArticleDatabase.getDatabaseInstance(application)
-
-    //Repository for getting all data from the DB
-    private val articleRepository = ArticleRepository(application, articleCategory, articleDatabase)
-            .getInstance()
+    val TAG = "SportsViewModel"
 
     init {
         refreshSportsDataInDb(application)
+        Log.e(TAG, "Sports VM created: ")
     }
 
     fun refreshSportsDataInDb(application: Application) {

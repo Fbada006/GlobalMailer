@@ -28,13 +28,14 @@ class TechnologyNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener 
 
     lateinit var binding: MyTechNewsFragmentBinding
     private val mTechViewModel by viewModels<TechnologyViewModel> {
-        getArticleViewModelFactory(PrefUtils.categoryTech(requireContext()))
+        getArticleViewModelFactory(category = PrefUtils.categoryTech(requireContext())!!)
     }
 
     private lateinit var mApplication: Application
     private val mFavsViewModel by viewModels<FavsViewModel> {
-        getArticleViewModelFactory()
+        getArticleViewModelFactory(category = "")
     }
+
     private var favsList: List<Article> = ArrayList()
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {

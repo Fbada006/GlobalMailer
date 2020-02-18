@@ -26,13 +26,14 @@ import com.like.LikeButton
 class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     lateinit var binding: MyGeneralNewsFragmentBinding
     private val mGeneralViewModel by viewModels<GeneralViewModel> {
-        getArticleViewModelFactory(PrefUtils.categoryGeneral(requireContext()))
+        getArticleViewModelFactory(category = PrefUtils.categoryGeneral(requireContext())!!)
     }
 
     private lateinit var mApplication: Application
     private val mFavsViewModel by viewModels<FavsViewModel> {
-        getArticleViewModelFactory()
+        getArticleViewModelFactory(category = "")
     }
+
     private var favsList: List<Article> = ArrayList()
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {

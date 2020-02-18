@@ -24,8 +24,9 @@ import com.like.LikeButton
 class FavsFragment : Fragment() {
     lateinit var binding: MyFavNewsFragmentBinding
     private val mFavsViewModel by viewModels<FavsViewModel> {
-        getArticleViewModelFactory()
+        getArticleViewModelFactory(category = "")
     }
+
     private lateinit var mApplication: Application
 
     private val mMyArticleAdapter = MyArticleAdapter(object : ArticleClickListenerInterface {
