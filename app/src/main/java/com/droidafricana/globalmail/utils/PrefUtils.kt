@@ -4,8 +4,10 @@ import android.content.Context
 import androidx.preference.PreferenceManager
 import com.droidafricana.globalmail.R
 
+/**A helper object for the shared preferences*/
 object PrefUtils {
 
+    /**Sort the articles value*/
     fun getSortByParam(context: Context?): String? {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         return sharedPreferences.getString(
@@ -13,6 +15,7 @@ object PrefUtils {
                 context?.getString(R.string.pref_sort_by_default))
     }
 
+    /**Get the endpoint*/
     fun getEndpoint(context: Context?): String? {
         val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
         return sharedPreferences.getString(
@@ -20,6 +23,7 @@ object PrefUtils {
                 context?.getString(R.string.pref_endpoint_default))
     }
 
+    /**Get country of news to show*/
     fun getCountry(context: Context?): String? {
         if (isEndPointEverything(context!!)) return null
 
@@ -34,35 +38,42 @@ object PrefUtils {
         return endPoint == "everything"
     }
 
-    /*Simple helper methods for the category*/
+    /**Simple helper method for the general category*/
     fun categoryGeneral(context: Context): String? {
         return if (isEndPointEverything(context)) null else context.getString(R.string.category_general_value)
     }
 
+    /**Simple helper method for the sports category*/
     fun categorySports(context: Context): String? {
         return if (isEndPointEverything(context)) null else context.getString(R.string.category_sports_value)
     }
 
+    /**Simple helper method for the ent category*/
     fun categoryEnt(context: Context): String? {
         return if (isEndPointEverything(context)) null else context.getString(R.string.category_entertainment_value)
     }
 
+    /**Simple helper method for the tech category*/
     fun categoryTech(context: Context): String? {
         return if (isEndPointEverything(context)) null else context.getString(R.string.category_technology_value)
     }
 
+    /**Simple helper method for the business category*/
     fun categoryBus(context: Context): String? {
         return if (isEndPointEverything(context)) null else context.getString(R.string.category_business_value)
     }
 
+    /**Simple helper method for the health category*/
     fun categoryHealth(context: Context): String? {
         return if (isEndPointEverything(context)) null else context.getString(R.string.category_health_value)
     }
 
+    /**Simple helper method for the science category*/
     fun categoryScience(context: Context): String? {
         return if (isEndPointEverything(context)) null else context.getString(R.string.category_science_value)
     }
 
+    /**Check if the notifications are enables*/
     fun areNotificationsEnabled(context: Context): Boolean {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(
@@ -70,6 +81,7 @@ object PrefUtils {
                         context.resources.getBoolean(R.bool.notification_default_value))
     }
 
+    /**If notifications are on, get the proper interval*/
     fun notificationInterval(context: Context): Int {
         val string = PreferenceManager.getDefaultSharedPreferences(context)
                 .getString(
