@@ -1,7 +1,7 @@
 package com.droidafricana.globalmail.utils
 
 import android.content.Context
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 import com.droidafricana.globalmail.R
 
 object PrefUtils {
