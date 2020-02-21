@@ -20,13 +20,14 @@ import com.droidafricana.globalmail.utils.PrefUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-//Responsible for writing and reading from the database. This controls everything
+/**Responsible for writing and reading from the database. This controls everything*/
 class ArticleRepository(private val context: Context,
                         private val articleCategory: String?,
                         private val articleDatabase: ArticleDatabase) {
 
     private var sArticleRepository: ArticleRepository? = null
 
+    /**Return an instance of the [ArticleRepository]*/
     @Synchronized
     fun getInstance(): ArticleRepository {
         if (sArticleRepository == null) {
@@ -35,7 +36,7 @@ class ArticleRepository(private val context: Context,
         return sArticleRepository as ArticleRepository
     }
 
-    /*Refresh the general database cache*/
+    /**Refresh the general database cache*/
     suspend fun refreshGeneralArticleDatabaseFromNetwork() {
         withContext(Dispatchers.IO) {
             try {
@@ -56,13 +57,13 @@ class ArticleRepository(private val context: Context,
         }
     }
 
-    /*Articles to display for the user to view*/
+    /**Articles to display for the user to view*/
     val generalArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.generalArticleDao.getAllGeneralArticles()) {
                 it.mappedAsDomainArticleModel()
             }
 
-    /*Refresh the sports database cache*/
+    /**Refresh the sports database cache*/
     suspend fun refreshSportsArticleDatabaseFromNetwork() {
         withContext(Dispatchers.IO) {
             try {
@@ -79,13 +80,13 @@ class ArticleRepository(private val context: Context,
         }
     }
 
-    /*Articles to display for the user to view*/
+    /**Articles to display for the user to view*/
     val sportsArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.sportsArticleDao.getAllSportsArticles()) {
                 it.mappedAsDomainArticleModel()
             }
 
-    /*Refresh the ent database cache*/
+    /**Refresh the ent database cache*/
     suspend fun refreshEntArticleDatabaseFromNetwork() {
         withContext(Dispatchers.IO) {
             try {
@@ -101,13 +102,13 @@ class ArticleRepository(private val context: Context,
         }
     }
 
-    /*Articles to display for the user to view*/
+    /**Articles to display for the user to view*/
     val entArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.entArticleDao.getAllEntArticles()) {
                 it.mappedAsDomainArticleModel()
             }
 
-    /*Refresh the tech database cache*/
+    /**Refresh the tech database cache*/
     suspend fun refreshTechArticleDatabaseFromNetwork() {
         withContext(Dispatchers.IO) {
             try {
@@ -122,13 +123,13 @@ class ArticleRepository(private val context: Context,
         }
     }
 
-    /*Articles to display for the user to view*/
+    /**Articles to display for the user to view*/
     val techArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.technologyArticleDao.getAllTechnologyArticles()) {
                 it.mappedAsDomainArticleModel()
             }
 
-    /*Refresh the business database cache*/
+    /**Refresh the business database cache*/
     suspend fun refreshBusinessArticleDatabaseFromNetwork() {
         withContext(Dispatchers.IO) {
             try {
@@ -143,13 +144,13 @@ class ArticleRepository(private val context: Context,
         }
     }
 
-    /*Articles to display for the user to view*/
+    /**Articles to display for the user to view*/
     val businessArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.busArticleDao.getAllBusinessArticles()) {
                 it.mappedAsDomainArticleModel()
             }
 
-    /*Refresh the health database cache*/
+    /**Refresh the health database cache*/
     suspend fun refreshHealthArticleDatabaseFromNetwork() {
         withContext(Dispatchers.IO) {
             try {
@@ -165,13 +166,13 @@ class ArticleRepository(private val context: Context,
         }
     }
 
-    /*Articles to display for the user to view*/
+    /**Articles to display for the user to view*/
     val healthArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.healthArticleDao.getAllHealthArticles()) {
                 it.mappedAsDomainArticleModel()
             }
 
-    /*Refresh the science database cache*/
+    /**Refresh the science database cache*/
     suspend fun refreshScienceArticleDatabaseFromNetwork() {
         withContext(Dispatchers.IO) {
             try {
@@ -186,13 +187,13 @@ class ArticleRepository(private val context: Context,
         }
     }
 
-    /*Articles to display for the user to view*/
+    /**Articles to display for the user to view*/
     val scienceArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.scienceArticleDao.getAllScienceArticles()) {
                 it.mappedAsDomainArticleModel()
             }
 
-    //Insert a favorite into the favorite table
+    /**Insert a favorite into the favorite table*/
     suspend fun insertArticleToFav(article: Article) {
         withContext(Dispatchers.IO) {
             article.isLiked = true
@@ -200,6 +201,7 @@ class ArticleRepository(private val context: Context,
         }
     }
 
+    /**Delete a favorite into the favorite table*/
     suspend fun deleteArticleInFav(article: Article) {
         withContext(Dispatchers.IO) {
             article.isLiked = false
@@ -207,12 +209,14 @@ class ArticleRepository(private val context: Context,
         }
     }
 
+    /**Clear the favorite table*/
     suspend fun deleteAllArticlesInFav() {
         withContext(Dispatchers.IO) {
             articleDatabase.favsArticleDao.clearFavsTable()
         }
     }
 
+    /**All articles from the favourite table*/
     val favouriteArticles: LiveData<List<Article>> =
             Transformations.map(articleDatabase.favsArticleDao.getAllFavArticles()) {
                 it.mappedAsDomainArticleModel()
