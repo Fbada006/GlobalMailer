@@ -15,6 +15,7 @@ import com.droidafricana.globalmail.domain.Article
 import com.droidafricana.globalmail.ui.search.ArticleApiStatus
 import com.squareup.picasso.Picasso
 
+/**A helper object with methods for the fragments*/
 object FragmentUtils {
     /**
      * @param owner         is the owner of the lifecycle
@@ -65,7 +66,7 @@ object FragmentUtils {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
-    /*This method listens to scrolls and determines if Picasso should load images*/
+    /**This method listens to scrolls and determines if Picasso should load images*/
     fun listenToUserScrolls(recyclerView: RecyclerView) {
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
@@ -82,6 +83,7 @@ object FragmentUtils {
     }
 }
 
+/**Returns the [ArticleViewModelFactory] as an extension function of a fragment*/
 fun Fragment.getArticleViewModelFactory(category: String? = null, queryParam: String? = null): ArticleViewModelFactory {
     val application = activity?.application!!
     return ArticleViewModelFactory(application, category, queryParam)

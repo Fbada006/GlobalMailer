@@ -101,7 +101,7 @@ object NotificationUtils {
                 PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
-    /*This method executes depending on the action
+    /**This method executes depending on the action
     * TODO: Needs some cleaning to set actions correctly*/
     fun executeArticleNotificationTask(context: Context, action: String, article: Article) {
         if (ACTION_DISMISS_NOTIFICATION == action) {

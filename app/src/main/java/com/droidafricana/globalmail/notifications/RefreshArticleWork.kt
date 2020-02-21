@@ -11,6 +11,7 @@ import com.droidafricana.globalmail.utils.NotificationUtils
 import com.droidafricana.globalmail.utils.PrefUtils
 import retrofit2.HttpException
 
+/**The work to refresh articles*/
 class RefreshArticleWork(appContext: Context, params: WorkerParameters) :
         CoroutineWorker(appContext, params) {
     companion object {
