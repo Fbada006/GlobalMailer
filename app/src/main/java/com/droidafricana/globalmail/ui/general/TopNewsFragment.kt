@@ -2,7 +2,6 @@ package com.droidafricana.globalmail.ui.general
 
 import android.app.Application
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
@@ -91,7 +90,6 @@ class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         //Get the general list
         mGeneralViewModel.generalArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (it != null) {
-                Log.e(TAG, "onCreateView:--------------- $it ")
                 mMyArticleAdapter.submitList(it)
 
                 for (article in favsList) {
