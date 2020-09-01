@@ -1,7 +1,11 @@
 package com.droidafricana.globalmail
 
 import android.app.Application
-import androidx.work.*
+import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.NetworkType
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.droidafricana.globalmail.notifications.RefreshArticleWork
 import com.droidafricana.globalmail.utils.PrefUtils
 import kotlinx.coroutines.CoroutineScope
@@ -10,7 +14,6 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
 class ArticleApplication : Application() {
-    private val TAG: String = ArticleApplication::class.java.name
 
     val applicationScope = CoroutineScope(Dispatchers.Default)
 
