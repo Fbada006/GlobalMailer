@@ -33,7 +33,6 @@ object NotificationUtils {
      * This notification channel id is used to link notifications to this channel
      */
     private const val ARTICLE_REMINDER_NOTIFICATION_CHANNEL_ID = "reminder_notification_channel"
-    private const val ACTION_IGNORE_ARTICLE_PENDING_INTENT_ID = 14
 
     private const val ACTION_DISMISS_NOTIFICATION = "dismiss-article-notification"
     const val ACTION_ISSUE_ARTICLE_NOTIFICATION = "new-article-notification"
