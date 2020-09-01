@@ -37,10 +37,6 @@ android {
     dataBinding {
         enabled = true
     }
-
-//    buildTypes.each {
-//        it.buildConfigField 'String', 'VANILLA', GlobalMail_ApiKey
-//    }
 }
 
 dependencies {
