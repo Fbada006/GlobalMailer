@@ -2,7 +2,13 @@ package com.droidafricana.globalmail.ui.general
 
 import android.app.Application
 import android.os.Bundle
-import android.view.*
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -24,6 +30,7 @@ import com.droidafricana.globalmail.utils.getArticleViewModelFactory
 import com.like.LikeButton
 
 class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
+    private val TAG = "TopNewsFragment"
     lateinit var binding: MyGeneralNewsFragmentBinding
     private val mGeneralViewModel by viewModels<GeneralViewModel> {
         getArticleViewModelFactory(PrefUtils.categoryGeneral(requireContext()))
@@ -53,6 +60,11 @@ class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
                               savedInstanceState: Bundle?): View? {
         binding = MyGeneralNewsFragmentBinding.inflate(
                 inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setHasOptionsMenu(true)
         binding.lifecycleOwner = this
@@ -79,6 +91,7 @@ class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         //Get the general list
         mGeneralViewModel.generalArticlesFromDb.observe(viewLifecycleOwner, Observer {
             if (it != null) {
+                Log.e(TAG, "onCreateView:--------------- $it ")
                 mMyArticleAdapter.submitList(it)
 
                 for (article in favsList) {
@@ -91,8 +104,6 @@ class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
         //Assign the fragmentViewModel to the articleViewModel
         binding.fragmentViewModel = mGeneralViewModel
-
-        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -120,8 +131,7 @@ class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         mGeneralViewModel.refreshGeneralDataInDb(mApplication)
 
         //Observe the LiveData object again and update the UI
-        FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mGeneralViewModel.generalArticlesFromDb
-                , mMyArticleAdapter)
+        FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mGeneralViewModel.generalArticlesFromDb, mMyArticleAdapter)
 
         //Hide the refreshing indicator
         binding.layoutSwipeRefresh.isRefreshing = false
@@ -135,8 +145,7 @@ class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             mGeneralViewModel.refreshGeneralDataInDb(mApplication)
 
             //Observe the LiveData object again and update the UI
-            FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mGeneralViewModel.generalArticlesFromDb
-                    , mMyArticleAdapter)
+            FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mGeneralViewModel.generalArticlesFromDb, mMyArticleAdapter)
         }
         //Set the flag back to false to avoid the refresh being a one time thing
         SettingsFragment.PREFERENCES_HAVE_BEEN_UPDATED = false

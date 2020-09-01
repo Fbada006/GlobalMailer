@@ -43,7 +43,7 @@ val client: OkHttpClient = OkHttpClient.Builder()
         .callTimeout(30, TimeUnit.SECONDS)
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(30, TimeUnit.SECONDS)
-        // .addInterceptor(interceptor)
+        .addInterceptor(interceptor)
         .writeTimeout(30, TimeUnit.SECONDS)
         .build()
 /**

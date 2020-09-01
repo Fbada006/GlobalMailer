@@ -33,9 +33,9 @@ class SearchViewModel internal constructor(application: Application,
     val articleLoadingStatus: LiveData<ArticleApiStatus>
         get() = _status
 
-    init {
-        getLiveArticles(application, articleCategory, queryParam)
-    }
+//    init {
+//        getLiveArticles(application, articleCategory, queryParam)
+//    }
 
     fun getLiveArticles(context: Context?, articleCategory: String?, queryParam: String?) {
         viewModelScope.launch {

@@ -43,7 +43,6 @@
                 android:textSize="@dimen/first_item_news_title_text_size"
                 android:textStyle="bold"
                 android:typeface="serif"
-
                 app:layout_constraintBottom_toTopOf="@id/image_frame"
                 app:layout_constraintEnd_toEndOf="@+id/image_frame"
                 app:layout_constraintStart_toStartOf="@+id/image_frame"
