@@ -28,7 +28,6 @@ import com.droidafricana.globalmail.utils.getArticleViewModelFactory
 import com.like.LikeButton
 
 class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
-    private val TAG = "TopNewsFragment"
     lateinit var binding: MyGeneralNewsFragmentBinding
     private val mGeneralViewModel by viewModels<GeneralViewModel> {
         getArticleViewModelFactory(PrefUtils.categoryGeneral(requireContext()))
