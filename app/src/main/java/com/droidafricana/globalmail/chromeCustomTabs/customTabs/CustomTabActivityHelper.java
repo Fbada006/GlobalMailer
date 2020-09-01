@@ -13,7 +13,6 @@ import androidx.browser.customtabs.CustomTabsSession;
  * This is a helper class to manage the connection to the Custom Tabs Service.
  */
 public class CustomTabActivityHelper implements ServiceConnectionCallback {
-    private static final String TAG = CustomTabActivityHelper.class.getSimpleName();
     private CustomTabsSession mCustomTabsSession;
     private CustomTabsClient mClient;
     private CustomTabsServiceConnection mConnection;
