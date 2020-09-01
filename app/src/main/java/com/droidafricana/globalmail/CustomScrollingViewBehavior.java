@@ -8,6 +8,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import com.google.android.material.appbar.AppBarLayout;
 
+import org.jetbrains.annotations.NotNull;
+
 public class CustomScrollingViewBehavior extends AppBarLayout.ScrollingViewBehavior {
     private AppBarLayout appBarLayout;
     private boolean onAnimationRunnablePosted = false;
@@ -21,8 +23,8 @@ public class CustomScrollingViewBehavior extends AppBarLayout.ScrollingViewBehav
     }
 
     @Override
-    public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout,
-                                       View child, View directTargetChild, View target,
+    public boolean onStartNestedScroll(@NotNull CoordinatorLayout coordinatorLayout,
+                                       @NotNull View child, @NotNull View directTargetChild, @NotNull View target,
                                        int nestedScrollAxes, int type) {
         if (appBarLayout != null) {
             // We need to check from when a scroll is started, as we may not have had the chance to update the layout at
@@ -33,7 +35,7 @@ public class CustomScrollingViewBehavior extends AppBarLayout.ScrollingViewBehav
     }
 
     @Override
-    public boolean onMeasureChild(CoordinatorLayout parent, final View child, int parentWidthMeasureSpec, int widthUsed,
+    public boolean onMeasureChild(@NotNull CoordinatorLayout parent, @NotNull final View child, int parentWidthMeasureSpec, int widthUsed,
                                   int parentHeightMeasureSpec, int heightUsed) {
         if (appBarLayout != null) {
             final int bottomPadding = calculateBottomPadding(appBarLayout);
@@ -51,7 +53,7 @@ public class CustomScrollingViewBehavior extends AppBarLayout.ScrollingViewBehav
     }
 
     @Override
-    public boolean onDependentViewChanged(CoordinatorLayout parent, final View child, final View dependency) {
+    public boolean onDependentViewChanged(@NotNull CoordinatorLayout parent, @NotNull final View child, @NotNull final View dependency) {
         if (appBarLayout == null)
             appBarLayout = (AppBarLayout) dependency;
 
