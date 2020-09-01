@@ -2,12 +2,16 @@ package com.droidafricana.globalmail.ui.business
 
 import android.app.Application
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -72,13 +76,13 @@ class BusinessNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         //Set the scroll listener on the recyclerView
         FragmentUtils.listenToUserScrolls(binding.recyclerView)
 
-        mFavsViewModel.favArticlesFromDb.observe(FavsFragment(), Observer {
+        mFavsViewModel.favArticlesFromDb.observe(FavsFragment(), {
             if (!it.isNullOrEmpty()) {
                 favsList = it
             }
         })
 
-        mBusViewModel.busArticlesFromDb.observe(this, Observer {
+        mBusViewModel.busArticlesFromDb.observe(this, {
             if (it != null) {
                 mMyArticleAdapter.submitList(it)
 

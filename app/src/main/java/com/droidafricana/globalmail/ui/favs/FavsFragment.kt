@@ -2,11 +2,15 @@ package com.droidafricana.globalmail.ui.favs
 
 import android.app.Application
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.droidafricana.globalmail.R
@@ -61,7 +65,7 @@ class FavsFragment : Fragment() {
         FragmentUtils.observeForArticlesFromDb(viewLifecycleOwner, mFavsViewModel.favArticlesFromDb,
                 mMyArticleAdapter)
 
-        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, Observer { articleList ->
+        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, { articleList ->
             if (articleList.isNullOrEmpty()) {
                 //Show the empty layout and hide the clear button
                 binding.layoutEmptyFavs.visibility = View.VISIBLE
@@ -81,7 +85,7 @@ class FavsFragment : Fragment() {
             }
         })
 
-        mFavsViewModel.showSnackBarEvent.observe(viewLifecycleOwner, Observer {
+        mFavsViewModel.showSnackBarEvent.observe(viewLifecycleOwner, {
             if (it == true) { // Observed state is true and all data is cleared.
                 Snackbar.make(activity!!.findViewById(android.R.id.content),
                         getString(R.string.cleared_message),

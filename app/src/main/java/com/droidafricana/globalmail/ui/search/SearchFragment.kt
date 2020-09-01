@@ -9,7 +9,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.droidafricana.globalmail.R
@@ -63,7 +62,7 @@ class SearchFragment : Fragment(), SearchView.OnQueryTextListener {
 
         viewModel.getLiveArticles(context, searchFragmentArgs.categoryString, query)
 
-        viewModel.liveArticlesObservable.observe(viewLifecycleOwner, Observer {
+        viewModel.liveArticlesObservable.observe(viewLifecycleOwner, {
             if (it.isEmpty()) {
                 binding.layoutNoArticlesFound.visibility = View.VISIBLE
             } else {

@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.droidafricana.globalmail.R
 import com.droidafricana.globalmail.adapter.MyArticleAdapter
@@ -24,7 +23,7 @@ object FragmentUtils {
      */
     fun observeForArticlesFromDb(owner: LifecycleOwner, articlesFromDb: LiveData<List<Article>>,
                                  articleAdapter: MyArticleAdapter) {
-        articlesFromDb.observe(owner, Observer { articleList ->
+        articlesFromDb.observe(owner, { articleList ->
             if (articleList != null) {
                 articleAdapter.submitList(articleList)
             }
@@ -38,7 +37,7 @@ object FragmentUtils {
      */
     fun observeViewModelForLoadingStatus(context: Context?, owner: LifecycleOwner, status: LiveData<ArticleApiStatus>,
                                          binding: FragmentSearchBinding) {
-        status.observe(owner, Observer { articleApiStatus ->
+        status.observe(owner, { articleApiStatus ->
             when (articleApiStatus) {
                 ArticleApiStatus.LOADING -> {
                     binding.typing.visibility = View.GONE

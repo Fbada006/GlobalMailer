@@ -11,7 +11,6 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -81,14 +80,14 @@ class TopNewsFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         //Set the scroll listener on the recyclerView
         FragmentUtils.listenToUserScrolls(binding.recyclerView)
 
-        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, Observer {
+        mFavsViewModel.favArticlesFromDb.observe(viewLifecycleOwner, {
             if (!it.isNullOrEmpty()) {
                 favsList = it
             }
         })
 
         //Get the general list
-        mGeneralViewModel.generalArticlesFromDb.observe(viewLifecycleOwner, Observer {
+        mGeneralViewModel.generalArticlesFromDb.observe(viewLifecycleOwner, {
             if (it != null) {
                 mMyArticleAdapter.submitList(it)
 
